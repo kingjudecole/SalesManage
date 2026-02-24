@@ -1,40 +1,2711 @@
-<!DOCTYPE html>
-<html lang="en" data-theme="dark">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lady R Realty | Ultra-Prime Ghana Real Estate</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=Inter:wght@200;300;400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    
-    <style>
-        :root {
-            --gold: #C5A059;
-            --black: #0A0A0A;
-            --white: #FFFFFF;
-            --grey: #1A1A1A;
-            --text-muted: #888888;
-            --transition: cubic-bezier(0.16, 1, 0.3, 1);
-        }
+<invoke name="str_replace">
+<parameter name="description">Completing the full HTML file - CSS continues</parameter>
+<parameter name="path">/home/claude/lady-r-realty.html</parameter>
+<parameter name="old_str">      transition: color 0.3s,</parameter>
+<parameter name="new_str">      transition: color 0.3s;
+    }
+    .mob-nav a:hover { color: var(--accent); }
+    .mob-nav-cta { padding: max(32px, 4vw); }
+    .mob-nav-cta .nav-cta-btn { display: block; text-align: center; }
 
-        [data-theme="light"] {
-            --black: #F8F8F8;
-            --white: #0A0A0A;
-            --grey: #E5E5E5;
-            --text-muted: #555555;
-        }
+    /* =============================================
+       HERO
+    ============================================= */
+    #hero {
+      position: relative; width: 100%; height: 100svh; min-height: 640px;
+      overflow: hidden;
+      display: flex; flex-direction: column; align-items: center; justify-content: flex-end;
+      padding-bottom: 100px;
+    }
+    .hero-video-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background: #080808;
+    }
+    .hero-video-bg video {
+      position: absolute; inset: 0; width: 100%; height: 100%;
+      object-fit: cover; opacity: 0.5;
+    }
+    .hero-overlay {
+      position: absolute; inset: 0; z-index: 1;
+      background: linear-gradient(
+        to bottom,
+        rgba(0,0,0,0.25) 0%,
+        rgba(0,0,0,0.05) 40%,
+        rgba(0,0,0,0.55) 75%,
+        rgba(0,0,0,0.9) 100%
+      );
+    }
+    .hero-content {
+      position: relative; z-index: 2;
+      text-align: center;
+      max-width: 880px; padding: 0 24px;
+    }
+    .hero-eyebrow {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; margin-bottom: 22px;
+      opacity: 0; transform: translateY(24px);
+      animation: slideUp 1s var(--ease-out) 0.3s forwards;
+    }
+    .hero-eyebrow-line { width: 40px; height: 1px; background: var(--accent); }
+    .hero-eyebrow span {
+      font-family: var(--font-brand); font-size: 0.6rem;
+      letter-spacing: 0.55em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(2.6rem, 7.5vw, 6.5rem);
+      font-weight: 300;
+      color: #fff;
+      line-height: 1.05;
+      letter-spacing: -0.01em;
+      margin-bottom: 20px;
+      opacity: 0; transform: translateY(32px);
+      animation: slideUp 1.1s var(--ease-out) 0.55s forwards;
+    }
+    .hero-title em { font-style: italic; color: var(--accent); }
+    .hero-sub {
+      font-family: var(--font-body);
+      font-size: clamp(0.8rem, 1.6vw, 1.05rem);
+      color: rgba(255,255,255,0.7);
+      letter-spacing: 0.06em;
+      max-width: 560px; margin: 0 auto 40px;
+      opacity: 0; transform: translateY(24px);
+      animation: slideUp 1s var(--ease-out) 0.8s forwards;
+    }
+    .hero-btns {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      justify-content: center;
+      opacity: 0; transform: translateY(24px);
+      animation: slideUp 1s var(--ease-out) 1s forwards;
+    }
+    .btn-primary {
+      font-family: var(--font-brand); font-size: 0.6rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 16px 38px; background: var(--accent); color: #000;
+      font-weight: 600;
+      transition: background 0.3s, transform 0.3s;
+      display: inline-block;
+    }
+    .btn-primary:hover { background: var(--accent-dim); transform: translateY(-2px); }
+    .btn-outline {
+      font-family: var(--font-brand); font-size: 0.6rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 15px 38px;
+      border: 1px solid rgba(255,255,255,0.45); color: #fff;
+      font-weight: 400;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+      display: inline-block;
+    }
+    .btn-outline:hover { border-color: var(--accent); background: rgba(212,175,55,0.08); transform: translateY(-2px); }
+    /* Hero Search Bar */
+    .hero-search {
+      position: absolute; bottom: 0; left: 50%; transform: translateX(-50%);
+      z-index: 3; width: min(1100px, calc(100% - 48px));
+      background: var(--surface);
+      border-top: 2px solid var(--accent);
+      display: flex; align-items: stretch; flex-wrap: wrap;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.7);
+    }
+    .search-field {
+      flex: 1; min-width: 160px;
+      border-right: 1px solid var(--border);
+      padding: 0 22px;
+    }
+    .search-field label {
+      display: block; font-family: var(--font-brand);
+      font-size: 0.48rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--accent);
+      padding-top: 16px; margin-bottom: 4px;
+    }
+    .search-field select, .search-field input {
+      width: 100%; background: transparent;
+      border: none; outline: none;
+      color: var(--text); font-size: 0.82rem;
+      padding-bottom: 14px;
+      -webkit-appearance: none;
+    }
+    .search-field select option { background: var(--surface); }
+    .search-btn {
+      background: var(--accent); color: #000;
+      padding: 0 38px;
+      font-family: var(--font-brand); font-size: 0.6rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      font-weight: 700;
+      transition: background 0.3s;
+      min-height: 80px;
+      white-space: nowrap;
+    }
+    .search-btn:hover { background: var(--accent-dim); }
+    .scroll-indicator {
+      position: absolute; bottom: 28px; right: 32px; z-index: 3;
+      display: flex; flex-direction: column; align-items: center; gap: 8px;
+      opacity: 0; animation: slideUp 1s var(--ease-out) 1.3s forwards;
+    }
+    .scroll-line {
+      width: 1px; height: 50px; background: rgba(255,255,255,0.3);
+      position: relative; overflow: hidden;
+    }
+    .scroll-line::after {
+      content: ''; position: absolute; top: -100%;
+      width: 100%; height: 100%; background: var(--accent);
+      animation: scrollDrop 2s ease infinite 1.5s;
+    }
+    @keyframes scrollDrop { 0% { top: -100%; } 100% { top: 100%; } }
+    .scroll-indicator span {
+      font-family: var(--font-brand); font-size: 0.42rem;
+      letter-spacing: 0.35em; text-transform: uppercase;
+      writing-mode: vertical-rl;
+      color: rgba(255,255,255,0.45);
+    }
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(28px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            font-family: 'Inter', sans-serif; 
-            background-color: var(--black); 
-            color: var(--white); 
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-        }
+    /* =============================================
+       SECTION UTILITIES
+    ============================================= */
+    section { padding: 120px max(24px, 5vw); }
+    .section-label {
+      display: flex; align-items: center; gap: 14px;
+      margin-bottom: 20px;
+    }
+    .section-label-line { width: 32px; height: 1px; background: var(--accent); }
+    .section-label span {
+      font-family: var(--font-brand); font-size: 0.55rem;
+      letter-spacing: 0.45em; text-transform: uppercase;
+      color: var(--accent);
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 4.5vw, 3.8rem);
+      font-weight: 400; line-height: 1.1;
+      color: var(--text);
+    }
+    .section-title em { font-style: italic; }
+    .section-subtitle {
+      font-size: 0.9rem; color: var(--text-muted);
+      max-width: 580px; line-height: 1.75;
+    }
+    .reveal {
+      opacity: 0; transform: translateY(44px);
+      transition: opacity 0.9s var(--ease-out), transform 0.9s var(--ease-out);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-d1 { transition-delay: 0.1s; }
+    .reveal-d2 { transition-delay: 0.2s; }
+    .reveal-d3 { transition-delay: 0.3s; }
+    .reveal-d4 { transition-delay: 0.4s; }
+    .reveal-d5 { transition-delay: 0.5s; }
 
-        /* --- PRELOADER --- */
+    /* =============================================
+       STATS BAR
+    ============================================= */
+    #stats-bar {
+      background: var(--surface); padding: 0;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-top: 80px;
+    }
+    .stats-inner {
+      display: grid; grid-template-columns: repeat(4, 1fr);
+    }
+    .stat-item {
+      padding: 42px 32px;
+      border-right: 1px solid var(--border);
+      text-align: center;
+    }
+    .stat-item:last-child { border-right: none; }
+    .stat-num {
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 4vw, 3.2rem);
+      font-weight: 300;
+      color: var(--accent); line-height: 1;
+      margin-bottom: 8px;
+    }
+    .stat-label {
+      font-family: var(--font-brand);
+      font-size: 0.52rem; letter-spacing: 0.3em;
+      text-transform: uppercase; color: var(--text-muted);
+    }
+
+    /* =============================================
+       FEATURED PROPERTIES
+    ============================================= */
+    #properties { padding-top: 140px; }
+    .properties-header {
+      display: flex; justify-content: space-between; align-items: flex-end;
+      flex-wrap: wrap; gap: 24px;
+      margin-bottom: 60px;
+    }
+    .property-filters {
+      display: flex; gap: 0; flex-wrap: wrap;
+      border: 1px solid var(--border);
+    }
+    .filter-btn {
+      font-family: var(--font-brand); font-size: 0.55rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 12px 22px;
+      border-right: 1px solid var(--border);
+      color: var(--text-muted);
+      transition: color 0.3s, background 0.3s;
+    }
+    .filter-btn:last-child { border-right: none; }
+    .filter-btn.active, .filter-btn:hover { color: var(--accent); background: var(--accent-light); }
+    .properties-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+    }
+    .prop-card {
+      background: var(--bg);
+      position: relative; overflow: hidden;
+      cursor: pointer;
+    }
+    .prop-card:first-child {
+      grid-column: span 2;
+      grid-row: span 1;
+    }
+    .prop-img-wrap {
+      position: relative; overflow: hidden;
+    }
+    .prop-card:first-child .prop-img-wrap { height: 480px; }
+    .prop-img-wrap { height: 320px; }
+    .prop-img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.9s var(--ease), filter 0.6s;
+      filter: brightness(0.85);
+    }
+    .prop-card:hover .prop-img { transform: scale(1.04); filter: brightness(0.75); }
+    .prop-badge {
+      position: absolute; top: 18px; left: 18px;
+      font-family: var(--font-brand); font-size: 0.48rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      padding: 7px 14px; color: #000; background: var(--accent);
+    }
+    .prop-status-sold {
+      position: absolute; top: 18px; right: 18px;
+      font-family: var(--font-brand); font-size: 0.48rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 6px 12px; background: rgba(0,0,0,0.7);
+      border: 1px solid rgba(255,255,255,0.2); color: #fff;
+    }
+    .prop-info {
+      padding: 24px 26px 28px;
+      background: var(--surface);
+      transition: background 0.3s;
+    }
+    .prop-card:hover .prop-info { background: var(--surface2); }
+    .prop-price {
+      font-family: var(--font-display);
+      font-size: clamp(1.2rem, 2vw, 1.5rem);
+      font-weight: 500; color: var(--text);
+      margin-bottom: 6px;
+    }
+    .prop-price .currency { font-size: 0.75em; color: var(--accent); }
+    .prop-name {
+      font-family: var(--font-brand); font-size: 0.62rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--text); margin-bottom: 6px;
+    }
+    .prop-loc {
+      font-size: 0.75rem; color: var(--text-muted);
+      display: flex; align-items: center; gap: 6px;
+      margin-bottom: 16px;
+    }
+    .prop-specs {
+      display: flex; gap: 18px;
+      border-top: 1px solid var(--border); padding-top: 14px;
+    }
+    .prop-spec {
+      font-family: var(--font-brand); font-size: 0.48rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--text-muted);
+    }
+    .prop-spec b { display: block; font-family: var(--font-body); font-size: 0.82rem; font-weight: 500; color: var(--text); }
+    .prop-actions {
+      position: absolute; inset: 0;
+      background: rgba(0,0,0,0.0);
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      transition: opacity 0.4s, background 0.4s;
+    }
+    .prop-card:hover .prop-actions { opacity: 1; }
+    .prop-view-btn {
+      font-family: var(--font-brand); font-size: 0.55rem;
+      letter-spacing: 0.25em; text-transform: uppercase;
+      padding: 14px 30px;
+      background: rgba(212,175,55,0.95); color: #000; font-weight: 700;
+      transform: translateY(12px);
+      transition: transform 0.4s var(--ease);
+      display: inline-block;
+    }
+    .prop-card:hover .prop-view-btn { transform: translateY(0); }
+    .prop-wa-btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 12px 22px;
+      border: 1px solid rgba(255,255,255,0.3); color: #fff;
+      font-family: var(--font-brand); font-size: 0.52rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      margin-top: 8px;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .prop-wa-btn:hover { border-color: #25D366; background: rgba(37,211,102,0.12); color: #25D366; }
+    .properties-cta { text-align: center; padding-top: 56px; }
+    .properties-cta p { font-size: 0.85rem; color: var(--text-muted); margin-top: 18px; }
+
+    /* =============================================
+       FEATURED SALES TICKER
+    ============================================= */
+    #sales-ticker {
+      background: var(--accent); overflow: hidden;
+      padding: 16px 0;
+    }
+    .ticker-inner {
+      display: flex; gap: 0;
+      animation: ticker 30s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker-item {
+      display: inline-flex; align-items: center; gap: 20px;
+      padding: 0 40px;
+      font-family: var(--font-brand); font-size: 0.58rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: #000;
+    }
+    .ticker-dot { width: 4px; height: 4px; background: #000; border-radius: 50%; flex-shrink: 0; }
+    @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+    /* =============================================
+       ABOUT SECTION
+    ============================================= */
+    #about {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 80px; align-items: center;
+    }
+    .about-img-stack { position: relative; padding: 32px 0 32px 32px; }
+    .about-img-main {
+      width: 100%; height: 540px;
+      object-fit: cover;
+      object-position: center top;
+      border: none;
+    }
+    .about-img-accent {
+      position: absolute; bottom: 0; left: 0;
+      width: 55%; height: 220px;
+      object-fit: cover; object-position: center top;
+      border: 4px solid var(--bg);
+    }
+    .about-award-badge {
+      position: absolute; top: 0; right: -16px;
+      background: var(--accent); padding: 20px;
+      text-align: center; width: 130px;
+    }
+    .about-award-badge .num {
+      font-family: var(--font-display); font-size: 2.4rem;
+      font-weight: 600; color: #000; line-height: 1;
+    }
+    .about-award-badge .lbl {
+      font-family: var(--font-brand); font-size: 0.45rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: #000;
+      margin-top: 6px; display: block;
+    }
+    .about-text { }
+    .about-text .section-title { margin-bottom: 24px; }
+    .about-text p { font-size: 0.9rem; line-height: 1.85; color: var(--text-muted); margin-bottom: 20px; }
+    .about-text p strong { color: var(--text); font-weight: 500; }
+    .about-values {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 20px; margin: 36px 0;
+    }
+    .about-value-item { border-left: 2px solid var(--accent); padding-left: 16px; }
+    .about-value-item h4 {
+      font-family: var(--font-brand); font-size: 0.58rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--text);
+      margin-bottom: 6px;
+    }
+    .about-value-item p { font-size: 0.78rem; margin: 0; }
+
+    /* =============================================
+       SERVICES
+    ============================================= */
+    #services { background: var(--surface); }
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border);
+      margin-top: 64px;
+    }
+    .service-card {
+      background: var(--surface); padding: 48px 36px;
+      position: relative; overflow: hidden;
+      transition: background 0.4s;
+    }
+    .service-card::before {
+      content: ''; position: absolute; bottom: 0; left: 0;
+      width: 0; height: 2px; background: var(--accent);
+      transition: width 0.6s var(--ease);
+    }
+    .service-card:hover { background: var(--surface2); }
+    .service-card:hover::before { width: 100%; }
+    .service-icon {
+      width: 48px; height: 48px; margin-bottom: 28px;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .service-icon svg { width: 100%; height: 100%; stroke: var(--accent); fill: none; stroke-width: 1.2; }
+    .service-card h3 {
+      font-family: var(--font-display); font-size: 1.45rem;
+      font-weight: 400; color: var(--text); margin-bottom: 14px;
+    }
+    .service-card p { font-size: 0.82rem; color: var(--text-muted); line-height: 1.8; }
+    .service-link {
+      display: inline-flex; align-items: center; gap: 10px;
+      margin-top: 24px;
+      font-family: var(--font-brand); font-size: 0.52rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--accent);
+      transition: gap 0.3s;
+    }
+    .service-link:hover { gap: 16px; }
+    .service-link::after { content: '→'; }
+
+    /* =============================================
+       MEDIA/PRESS SECTION
+    ============================================= */
+    #media-features {
+      border-top: 1px solid var(--border);
+      padding: 70px max(24px, 5vw);
+      text-align: center;
+    }
+    .media-label {
+      font-family: var(--font-brand); font-size: 0.52rem;
+      letter-spacing: 0.45em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 36px;
+    }
+    .media-logos {
+      display: flex; align-items: center; justify-content: center;
+      flex-wrap: wrap; gap: 10px 0;
+    }
+    .media-logo-item {
+      padding: 0 36px;
+      border-right: 1px solid var(--border);
+      font-family: var(--font-brand);
+      font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-muted);
+      transition: color 0.3s;
+    }
+    .media-logo-item:last-child { border-right: none; }
+    .media-logo-item:hover { color: var(--text); }
+
+    /* =============================================
+       TESTIMONIALS
+    ============================================= */
+    #testimonials { background: var(--surface); overflow: hidden; }
+    .testimonials-header { max-width: 600px; margin-bottom: 70px; }
+    .testimonials-track-wrap { overflow: hidden; margin: 0 -5vw; }
+    .testimonials-track {
+      display: flex; gap: 24px;
+      animation: testimonialScroll 40s linear infinite;
+    }
+    .testimonials-track:hover { animation-play-state: paused; }
+    @keyframes testimonialScroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .testimonial-card {
+      flex-shrink: 0; width: 400px;
+      background: var(--bg); padding: 40px 36px;
+      border: 1px solid var(--border);
+      border-top: 2px solid var(--accent);
+    }
+    .test-stars {
+      display: flex; gap: 4px; margin-bottom: 20px;
+    }
+    .test-stars span { color: var(--accent); font-size: 0.8rem; }
+    .test-quote {
+      font-family: var(--font-display);
+      font-size: 1.05rem; font-style: italic;
+      font-weight: 300; line-height: 1.65;
+      color: var(--text); margin-bottom: 24px;
+    }
+    .test-author {
+      display: flex; align-items: center; gap: 14px;
+      border-top: 1px solid var(--border); padding-top: 18px;
+    }
+    .test-avatar {
+      width: 42px; height: 42px; border-radius: 50%;
+      background: var(--accent-light); border: 1px solid var(--accent-border);
+      display: flex; align-items: center; justify-content: center;
+      font-family: var(--font-brand); font-size: 0.6rem; color: var(--accent);
+      flex-shrink: 0;
+    }
+    .test-name {
+      font-family: var(--font-brand); font-size: 0.55rem;
+      letter-spacing: 0.15em; text-transform: uppercase; color: var(--text);
+    }
+    .test-role { font-size: 0.72rem; color: var(--text-muted); }
+
+    /* =============================================
+       LEADER / CEO SECTION
+    ============================================= */
+    #leader {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0; align-items: stretch;
+    }
+    .leader-img {
+      position: relative;
+    }
+    .leader-img img {
+      width: 100%; height: 100%; min-height: 600px;
+      object-fit: cover;
+      object-position: center top;
+    }
+    .leader-content {
+      background: var(--surface);
+      padding: 80px max(40px, 5vw) 80px;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    .leader-content .section-title { margin-bottom: 8px; }
+    .leader-content .title-sub {
+      font-family: var(--font-brand); font-size: 0.58rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 28px;
+    }
+    .leader-content p { font-size: 0.88rem; color: var(--text-muted); line-height: 1.85; margin-bottom: 18px; }
+    .leader-awards {
+      margin-top: 32px; display: flex; flex-direction: column; gap: 14px;
+    }
+    .leader-award-item {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 16px; border: 1px solid var(--border);
+      transition: border-color 0.3s;
+    }
+    .leader-award-item:hover { border-color: var(--accent-border); }
+    .award-icon { color: var(--accent); font-size: 1.2rem; flex-shrink: 0; margin-top: 2px; }
+    .award-text h5 {
+      font-family: var(--font-brand); font-size: 0.55rem;
+      letter-spacing: 0.15em; text-transform: uppercase;
+      color: var(--text); margin-bottom: 4px;
+    }
+    .award-text p { font-size: 0.75rem; color: var(--text-muted); margin: 0; }
+    .leader-social {
+      display: flex; gap: 12px; margin-top: 32px;
+    }
+    .leader-social a {
+      width: 40px; height: 40px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem; transition: border-color 0.3s, color 0.3s;
+    }
+    .leader-social a:hover { border-color: var(--accent); color: var(--accent); }
+
+    /* =============================================
+       TOOLS — ROI CALCULATOR & QUIZ
+    ============================================= */
+    #tools {
+      background: var(--surface2);
+      padding: 120px max(24px, 5vw);
+    }
+    .tools-tabs {
+      display: flex; gap: 0; border-bottom: 1px solid var(--border);
+      margin-bottom: 56px;
+    }
+    .tool-tab {
+      font-family: var(--font-brand); font-size: 0.6rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      padding: 16px 32px; color: var(--text-muted);
+      border-bottom: 2px solid transparent; margin-bottom: -1px;
+      transition: color 0.3s, border-color 0.3s;
+    }
+    .tool-tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+    .tool-pane { display: none; }
+    .tool-pane.active { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; }
+    .calc-form { }
+    .calc-group { margin-bottom: 22px; }
+    .calc-group label {
+      display: block; font-family: var(--font-brand); font-size: 0.52rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .calc-group input, .calc-group select {
+      width: 100%; padding: 14px 16px;
+      background: var(--surface); border: 1px solid var(--border);
+      color: var(--text); font-size: 0.9rem; font-family: var(--font-body);
+      outline: none;
+      transition: border-color 0.3s;
+    }
+    .calc-group input:focus, .calc-group select:focus { border-color: var(--accent); }
+    .calc-group select option { background: var(--surface); }
+    .calc-result {
+      background: var(--bg); border: 1px solid var(--border-strong);
+      border-top: 2px solid var(--accent); padding: 36px 32px;
+    }
+    .calc-result h3 {
+      font-family: var(--font-brand); font-size: 0.58rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 28px;
+    }
+    .result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .result-item .result-label {
+      font-family: var(--font-brand); font-size: 0.48rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted);
+    }
+    .result-item .result-val {
+      font-family: var(--font-display); font-size: 1.6rem; font-weight: 500;
+      color: var(--accent); margin-top: 4px;
+    }
+    /* Property Quiz */
+    .quiz-question { display: none; }
+    .quiz-question.active { display: block; }
+    .quiz-q {
+      font-family: var(--font-display); font-size: clamp(1.2rem, 2.5vw, 1.6rem);
+      font-weight: 400; color: var(--text); margin-bottom: 28px;
+    }
+    .quiz-options { display: flex; flex-direction: column; gap: 12px; }
+    .quiz-opt {
+      padding: 16px 22px; border: 1px solid var(--border);
+      text-align: left; font-family: var(--font-body); font-size: 0.88rem;
+      color: var(--text); transition: border-color 0.3s, background 0.3s;
+    }
+    .quiz-opt:hover { border-color: var(--accent); background: var(--accent-light); }
+    .quiz-opt.selected { border-color: var(--accent); background: var(--accent-light); color: var(--accent); }
+    .quiz-nav { display: flex; gap: 12px; margin-top: 24px; }
+    .quiz-progress-bar {
+      height: 2px; background: var(--border);
+      margin-bottom: 32px; position: relative;
+    }
+    .quiz-progress-fill {
+      height: 100%; background: var(--accent);
+      transition: width 0.4s var(--ease);
+    }
+    .quiz-result-panel { display: none; }
+    .quiz-result-panel.show { display: block; }
+    .quiz-result-panel .result-card {
+      padding: 36px; border: 1px solid var(--accent-border);
+      background: var(--accent-light);
+    }
+    .quiz-result-panel .result-card h3 {
+      font-family: var(--font-display); font-size: 1.6rem; color: var(--accent); margin-bottom: 12px;
+    }
+    .quiz-result-panel .result-card p { font-size: 0.88rem; color: var(--text); margin-bottom: 20px; }
+
+    /* =============================================
+       TEAM
+    ============================================= */
+    #team { }
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px; background: var(--border);
+      margin-top: 64px;
+    }
+    .team-card { background: var(--bg); overflow: hidden; }
+    .team-img-wrap { position: relative; overflow: hidden; }
+    .team-img-wrap img {
+      width: 100%; height: 340px; object-fit: cover; object-position: center top;
+      transition: transform 0.8s var(--ease);
+      filter: grayscale(20%);
+    }
+    .team-card:hover .team-img-wrap img { transform: scale(1.04); filter: grayscale(0%); }
+    .team-info { padding: 22px 20px 26px; background: var(--surface); }
+    .team-name {
+      font-family: var(--font-display); font-size: 1.15rem;
+      font-weight: 400; color: var(--text); margin-bottom: 4px;
+    }
+    .team-role {
+      font-family: var(--font-brand); font-size: 0.48rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+    }
+
+    /* =============================================
+       NEWS / BLOG
+    ============================================= */
+    #news { background: var(--surface); }
+    .news-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr);
+      gap: 1px; background: var(--border); margin-top: 64px;
+    }
+    .news-card { background: var(--surface); overflow: hidden; transition: background 0.3s; }
+    .news-card:hover { background: var(--surface2); }
+    .news-img { width: 100%; height: 220px; object-fit: cover; transition: transform 0.6s var(--ease); }
+    .news-card:hover .news-img { transform: scale(1.03); }
+    .news-img-wrap { overflow: hidden; }
+    .news-body { padding: 26px 24px; }
+    .news-cat {
+      font-family: var(--font-brand); font-size: 0.48rem;
+      letter-spacing: 0.25em; text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+    }
+    .news-title {
+      font-family: var(--font-display); font-size: 1.1rem;
+      font-weight: 400; color: var(--text);
+      line-height: 1.3; margin-bottom: 10px;
+    }
+    .news-excerpt { font-size: 0.78rem; color: var(--text-muted); line-height: 1.75; margin-bottom: 16px; }
+    .news-date { font-family: var(--font-brand); font-size: 0.48rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+    .news-read-more {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: var(--font-brand); font-size: 0.5rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent);
+      border-bottom: 1px solid var(--accent-border); padding-bottom: 2px;
+      transition: gap 0.3s;
+    }
+    .news-read-more:hover { gap: 12px; }
+
+    /* =============================================
+       FAQ
+    ============================================= */
+    #faq { }
+    .faq-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 0 80px; margin-top: 64px;
+    }
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+    }
+    .faq-q {
+      width: 100%; text-align: left; padding: 22px 0;
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: var(--font-display); font-size: 1rem;
+      font-weight: 400; color: var(--text);
+      transition: color 0.3s;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-icon {
+      font-size: 1.1rem; color: var(--accent);
+      transition: transform 0.35s var(--ease);
+      flex-shrink: 0; margin-left: 16px;
+    }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      font-size: 0.83rem; color: var(--text-muted);
+      line-height: 1.8; max-height: 0; overflow: hidden;
+      transition: max-height 0.45s var(--ease), padding 0.3s;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding-bottom: 20px; }
+
+    /* =============================================
+       CONTACT & BOOKING
+    ============================================= */
+    #contact { background: var(--surface); }
+    .contact-inner {
+      display: grid; grid-template-columns: 1fr 1.4fr;
+      gap: 80px; align-items: start;
+    }
+    .contact-info {}
+    .contact-info .section-title { margin-bottom: 28px; }
+    .contact-detail {
+      display: flex; gap: 16px; align-items: flex-start;
+      padding: 20px 0; border-bottom: 1px solid var(--border);
+    }
+    .contact-detail:last-of-type { border-bottom: none; }
+    .contact-detail-icon {
+      width: 40px; height: 40px; border: 1px solid var(--accent-border);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 0.85rem; flex-shrink: 0;
+    }
+    .contact-detail-text h5 {
+      font-family: var(--font-brand); font-size: 0.5rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-muted); margin-bottom: 4px;
+    }
+    .contact-detail-text a, .contact-detail-text p {
+      font-size: 0.88rem; color: var(--text);
+      transition: color 0.3s;
+    }
+    .contact-detail-text a:hover { color: var(--accent); }
+    .hours-grid { display: flex; flex-direction: column; gap: 4px; margin-top: 2px; }
+    .hours-row { display: flex; justify-content: space-between; font-size: 0.78rem; gap: 20px; }
+    .hours-row .day { color: var(--text-muted); }
+    .hours-row .time { color: var(--text); }
+    .open-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 14px;
+      font-family: var(--font-brand); font-size: 0.48rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      background: rgba(34,197,94,0.12); color: #22c55e;
+      border: 1px solid rgba(34,197,94,0.3);
+      margin-top: 12px;
+    }
+    .open-badge .dot { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; animation: blink 1.4s infinite; }
+    .closed-badge {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 6px 14px;
+      font-family: var(--font-brand); font-size: 0.48rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      background: rgba(239,68,68,0.1); color: #ef4444;
+      border: 1px solid rgba(239,68,68,0.3);
+    }
+    .closed-badge .dot { width: 6px; height: 6px; background: #ef4444; border-radius: 50%; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0.3} }
+    .contact-form {}
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label {
+      display: block; font-family: var(--font-brand); font-size: 0.5rem;
+      letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted);
+      margin-bottom: 8px;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 14px 16px;
+      background: var(--bg); border: 1px solid var(--border);
+      color: var(--text); font-size: 0.88rem; font-family: var(--font-body);
+      outline: none; transition: border-color 0.3s;
+    }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--accent); }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-muted); }
+    .form-note { font-size: 0.72rem; color: var(--text-muted); margin-top: 12px; }
+    #form-success {
+      display: none; padding: 18px 22px;
+      background: rgba(34,197,94,0.1); border: 1px solid rgba(34,197,94,0.3);
+      color: #22c55e; font-size: 0.85rem; margin-top: 16px;
+    }
+    .map-embed { margin-top: 48px; }
+    .map-embed iframe {
+      width: 100%; height: 320px; border: none;
+      filter: grayscale(30%) contrast(1.1);
+    }
+
+    /* =============================================
+       POPUP
+    ============================================= */
+    #popup-overlay {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.85);
+      z-index: 8000; display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none; transition: opacity 0.4s;
+      padding: 20px;
+    }
+    #popup-overlay.show { opacity: 1; pointer-events: all; }
+    .popup-box {
+      background: var(--surface); max-width: 540px; width: 100%;
+      border-top: 3px solid var(--accent);
+      padding: 48px 44px;
+      position: relative;
+      transform: translateY(28px);
+      transition: transform 0.45s var(--ease-out);
+    }
+    #popup-overlay.show .popup-box { transform: translateY(0); }
+    .popup-close {
+      position: absolute; top: 16px; right: 16px;
+      font-size: 1.2rem; color: var(--text-muted);
+      width: 36px; height: 36px; display: flex; align-items: center; justify-content: center;
+      transition: color 0.3s;
+    }
+    .popup-close:hover { color: var(--accent); }
+    .popup-label {
+      font-family: var(--font-brand); font-size: 0.5rem;
+      letter-spacing: 0.35em; text-transform: uppercase;
+      color: var(--accent); margin-bottom: 14px;
+    }
+    .popup-title {
+      font-family: var(--font-display); font-size: clamp(1.5rem, 3vw, 2rem);
+      color: var(--text); margin-bottom: 12px;
+    }
+    .popup-sub { font-size: 0.83rem; color: var(--text-muted); margin-bottom: 28px; line-height: 1.7; }
+    .popup-input {
+      width: 100%; padding: 14px 16px;
+      background: var(--bg); border: 1px solid var(--border);
+      color: var(--text); font-size: 0.9rem; font-family: var(--font-body);
+      outline: none; margin-bottom: 12px;
+      transition: border-color 0.3s;
+    }
+    .popup-input:focus { border-color: var(--accent); }
+    .popup-input::placeholder { color: var(--text-muted); }
+    .popup-disclaimer { font-size: 0.7rem; color: var(--text-muted); margin-top: 12px; }
+    .popup-disclaimer a { color: var(--accent); }
+    .popup-limited {
+      display: flex; align-items: center; gap: 10px;
+      padding: 12px 16px; background: var(--accent-light); border: 1px solid var(--accent-border);
+      margin-bottom: 22px;
+    }
+    .popup-limited .lim-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; flex-shrink: 0; animation: blink 1.4s infinite; }
+    .popup-limited span { font-family: var(--font-brand); font-size: 0.5rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+
+    /* =============================================
+       FLOATING CALL BUTTON
+    ============================================= */
+    #float-call {
+      position: fixed; bottom: 28px; right: 28px; z-index: 500;
+      display: flex; flex-direction: column; align-items: center; gap: 10px;
+    }
+    .float-call-btn {
+      width: 58px; height: 58px; border-radius: 50%;
+      background: var(--accent); color: #000;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.3rem;
+      box-shadow: 0 4px 24px rgba(212,175,55,0.4);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: callPulse 3s ease infinite;
+    }
+    .float-call-btn:hover { transform: scale(1.08); box-shadow: 0 8px 32px rgba(212,175,55,0.55); }
+    @keyframes callPulse {
+      0%,100%{box-shadow:0 4px 24px rgba(212,175,55,0.4)}
+      50%{box-shadow:0 4px 40px rgba(212,175,55,0.7)}
+    }
+    .float-call-label {
+      font-family: var(--font-brand); font-size: 0.42rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--text-muted); white-space: nowrap;
+    }
+
+    /* =============================================
+       BACK TO TOP
+    ============================================= */
+    #back-top {
+      position: fixed; bottom: 28px; left: 28px; z-index: 500;
+      width: 46px; height: 46px;
+      border: 1px solid var(--border-strong);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; color: var(--text-muted);
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.4s, color 0.3s, border-color 0.3s;
+    }
+    #back-top.show { opacity: 1; pointer-events: all; }
+    #back-top:hover { color: var(--accent); border-color: var(--accent); }
+
+    /* =============================================
+       COOKIE BANNER
+    ============================================= */
+    #cookie-bar {
+      position: fixed; bottom: 0; left: 0; right: 0; z-index: 9000;
+      background: var(--surface);
+      border-top: 1px solid var(--border);
+      padding: 20px max(24px, 4vw);
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 16px;
+      transform: translateY(100%); transition: transform 0.5s var(--ease-out);
+    }
+    #cookie-bar.show { transform: translateY(0); }
+    .cookie-text { font-size: 0.78rem; color: var(--text-muted); max-width: 700px; }
+    .cookie-text a { color: var(--accent); }
+    .cookie-btns { display: flex; gap: 10px; flex-wrap: wrap; }
+    .cookie-accept {
+      font-family: var(--font-brand); font-size: 0.52rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 10px 24px; background: var(--accent); color: #000; font-weight: 600;
+      transition: background 0.3s;
+    }
+    .cookie-accept:hover { background: var(--accent-dim); }
+    .cookie-decline {
+      font-family: var(--font-brand); font-size: 0.52rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      padding: 9px 22px; border: 1px solid var(--border);
+      color: var(--text-muted); transition: border-color 0.3s;
+    }
+    .cookie-decline:hover { border-color: var(--border-strong); }
+
+    /* =============================================
+       FOOTER
+    ============================================= */
+    #footer {
+      background: #050505; padding: 80px max(24px, 5vw) 32px;
+      border-top: 1px solid var(--border);
+    }
+    [data-theme="light"] #footer { background: var(--surface2); }
+    .footer-top {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1.2fr;
+      gap: 48px; padding-bottom: 60px;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 36px;
+    }
+    .footer-brand { }
+    .footer-brand-name {
+      font-family: var(--font-brand); font-size: 1rem;
+      letter-spacing: 0.28em; font-weight: 700;
+      color: var(--text); text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+    .footer-brand-name .accent { color: var(--accent); }
+    .footer-tagline {
+      font-family: var(--font-display); font-style: italic;
+      font-size: 0.9rem; color: var(--text-muted); margin-bottom: 20px;
+    }
+    .footer-bio { font-size: 0.78rem; color: var(--text-muted); line-height: 1.8; max-width: 320px; margin-bottom: 24px; }
+    .footer-social { display: flex; gap: 10px; }
+    .footer-social a {
+      width: 36px; height: 36px; border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.8rem; color: var(--text-muted);
+      transition: border-color 0.3s, color 0.3s;
+    }
+    .footer-social a:hover { border-color: var(--accent); color: var(--accent); }
+    .footer-col h5 {
+      font-family: var(--font-brand); font-size: 0.52rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--text); margin-bottom: 20px;
+    }
+    .footer-col ul { list-style: none; }
+    .footer-col ul li { margin-bottom: 11px; }
+    .footer-col ul li a {
+      font-size: 0.78rem; color: var(--text-muted);
+      transition: color 0.3s;
+    }
+    .footer-col ul li a:hover { color: var(--accent); }
+    .footer-contact-item {
+      display: flex; gap: 12px; align-items: flex-start;
+      margin-bottom: 14px;
+    }
+    .footer-contact-item span:first-child { color: var(--accent); font-size: 0.8rem; flex-shrink: 0; margin-top: 2px; }
+    .footer-contact-item span:last-child { font-size: 0.78rem; color: var(--text-muted); line-height: 1.5; }
+    .footer-contact-item a { color: var(--text-muted); transition: color 0.3s; }
+    .footer-contact-item a:hover { color: var(--accent); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 16px;
+    }
+    .footer-copy { font-size: 0.72rem; color: var(--text-muted); }
+    .footer-legal { display: flex; gap: 24px; }
+    .footer-legal a { font-size: 0.72rem; color: var(--text-muted); transition: color 0.3s; }
+    .footer-legal a:hover { color: var(--accent); }
+    .footer-credit {
+      font-family: var(--font-brand); font-size: 0.45rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: rgba(212,175,55,0.35);
+    }
+
+    /* =============================================
+       INSTAGRAM SECTION
+    ============================================= */
+    #instagram { padding: 80px max(24px, 5vw); }
+    .ig-header {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 20px; margin-bottom: 36px;
+    }
+    .ig-title {
+      font-family: var(--font-brand); font-size: 0.6rem;
+      letter-spacing: 0.3em; text-transform: uppercase;
+      color: var(--text-muted); display: flex; align-items: center; gap: 10px;
+    }
+    .ig-title .ig-icon { color: var(--accent); font-size: 1rem; }
+    .ig-grid {
+      display: grid; grid-template-columns: repeat(6, 1fr);
+      gap: 4px;
+    }
+    .ig-cell {
+      aspect-ratio: 1; overflow: hidden; position: relative;
+      background: var(--surface2);
+      cursor: pointer;
+    }
+    .ig-cell img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s var(--ease), opacity 0.4s; }
+    .ig-cell:hover img { transform: scale(1.06); opacity: 0.7; }
+    .ig-cell-overlay {
+      position: absolute; inset: 0;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0,0,0,0);
+      transition: background 0.4s;
+    }
+    .ig-cell:hover .ig-cell-overlay { background: rgba(0,0,0,0.35); }
+    .ig-cell-overlay span { color: #fff; font-size: 1.4rem; opacity: 0; transition: opacity 0.3s; }
+    .ig-cell:hover .ig-cell-overlay span { opacity: 1; }
+
+    /* =============================================
+       RESPONSIVE
+    ============================================= */
+    @media (max-width: 1100px) {
+      .properties-grid { grid-template-columns: 1fr 1fr; }
+      .prop-card:first-child { grid-column: span 2; }
+      .team-grid { grid-template-columns: repeat(3, 1fr); }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .ig-grid { grid-template-columns: repeat(4, 1fr); }
+      .ig-cell:nth-child(n+5) { display: none; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      #about { grid-template-columns: 1fr; }
+      .about-img-stack { order: -1; padding: 0; }
+      .about-img-accent { display: none; }
+      .about-award-badge { right: 0; }
+      #leader { grid-template-columns: 1fr; }
+      .leader-img img { min-height: 420px; }
+      .contact-inner { grid-template-columns: 1fr; }
+      .tool-pane.active { grid-template-columns: 1fr; }
+      .faq-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      :root { --nav-h: 72px; }
+      section { padding: 80px 20px; }
+      .stats-inner { grid-template-columns: 1fr 1fr; }
+      .stat-item:nth-child(2) { border-right: none; }
+      .stat-item:nth-child(3) { border-top: 1px solid var(--border); }
+      .stat-item:nth-child(4) { border-top: 1px solid var(--border); border-right: none; }
+      .properties-grid { grid-template-columns: 1fr; }
+      .prop-card:first-child { grid-column: span 1; }
+      .services-grid { grid-template-columns: 1fr; }
+      .news-grid { grid-template-columns: 1fr; }
+      .team-grid { grid-template-columns: 1fr 1fr; }
+      .footer-top { grid-template-columns: 1fr; gap: 36px; }
+      .hero-search { position: relative; transform: none; left: auto; bottom: auto; width: calc(100% - 40px); margin: -40px auto 0; }
+      .search-field { min-width: calc(50% - 2px); }
+      .search-btn { width: 100%; min-height: 56px; }
+      #hero { padding-bottom: 0; }
+      .about-img-main { height: 380px; }
+      .form-row { grid-template-columns: 1fr; }
+      .ig-grid { grid-template-columns: repeat(3, 1fr); }
+      .ig-cell:nth-child(n+4) { display: none; }
+      .result-grid { grid-template-columns: 1fr; }
+      .pre-brand-name { font-size: clamp(2.2rem, 11vw, 5rem); }
+      #float-call { bottom: 16px; right: 16px; }
+      #back-top { bottom: 80px; left: 16px; }
+    }
+    @media (max-width: 460px) {
+      .hero-btns { flex-direction: column; width: 100%; }
+      .btn-primary, .btn-outline { text-align: center; }
+      .team-grid { grid-template-columns: 1fr; }
+      .about-values { grid-template-columns: 1fr; }
+      .ig-grid { grid-template-columns: repeat(3,1fr); }
+    }
+  </style>
+</head>
+
+<body class="preloading">
+
+<!-- =============================================
+     PRELOADER
+============================================= -->
+<div id="preloader">
+  <div class="pre-layer" id="pre-layer-slogan">
+    <div id="pre-slogan">Expertise With Passion</div>
+  </div>
+  <div class="pre-layer" id="pre-layer-est">
+    <div id="pre-est">Established Since 2008 — Accra, Ghana</div>
+  </div>
+  <div class="pre-layer" id="pre-layer-brand">
+    <div id="pre-brand-wrap">
+      <div class="pre-brand-name" id="pre-brand"></div>
+      <div class="pre-underline" id="pre-underline"></div>
+      <div class="pre-tagline" id="pre-tagline">
+        <div class="pre-tagline-bar"></div>
+        <span>Ghana's Premier Real Estate Agency</span>
+        <div class="pre-tagline-bar"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     NAV
+============================================= -->
+<nav id="nav">
+  <a href="#hero" class="nav-brand">LADY <span class="accent">R</span> REALTY</a>
+  <ul class="nav-links">
+    <li>
+      <a href="https://ladyr-realty.com/about-us/" target="_blank">About</a>
+      <div class="nav-drop">
+        <a href="https://ladyr-realty.com/about-us/" target="_blank">About Lady R</a>
+        <a href="#leader">Mrs. Regina Koomson</a>
+        <a href="#team">Our Team</a>
+      </div>
+    </li>
+    <li>
+      <a href="https://ladyr-realty.com/property-search/" target="_blank">Properties</a>
+      <div class="nav-drop">
+        <a href="https://ladyr-realty.com/property-search/" target="_blank">All Listings</a>
+        <a href="https://ladyr-realty.com/property-search/" target="_blank">For Sale</a>
+        <a href="https://ladyr-realty.com/property-search/" target="_blank">To Let</a>
+        <a href="https://ladyr-realty.com/property-search/" target="_blank">Short Stay</a>
+      </div>
+    </li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#tools">Tools</a></li>
+    <li>
+      <a href="#media-features">Media</a>
+      <div class="nav-drop">
+        <a href="https://ladyr-realty.com/news/" target="_blank">News</a>
+        <a href="https://www.youtube.com/@Lady-RRealty" target="_blank">YouTube</a>
+        <a href="https://www.instagram.com/lady_r_realty/" target="_blank">Instagram</a>
+      </div>
+    </li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-btn" id="theme-toggle" aria-label="Toggle theme">☀</button>
+    <a href="#contact" class="nav-cta-btn">Book Consultation</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Nav -->
+<div class="mob-nav" id="mob-nav">
+  <a href="https://ladyr-realty.com/about-us/" target="_blank">About</a>
+  <a href="https://ladyr-realty.com/property-search/" target="_blank">Properties</a>
+  <a href="#services">Services</a>
+  <a href="#tools">Property Tools</a>
+  <a href="https://ladyr-realty.com/news/" target="_blank">News</a>
+  <a href="#contact">Contact</a>
+  <a href="https://ladyr-realty.com/login/" target="_blank">Client Login</a>
+  <div class="mob-nav-cta">
+    <a href="#contact" class="nav-cta-btn">Book Free Consultation</a>
+  </div>
+</div>
+
+<!-- =============================================
+     HERO
+============================================= -->
+<section id="hero">
+  <div class="hero-video-bg">
+    <!-- Luxury African lifestyle — using a gorgeous embed from Pexels-compatible CDN -->
+    <video autoplay muted loop playsinline poster="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80">
+      <source src="https://player.vimeo.com/external/368458166.sd.mp4?s=1e5e86a88cb8786ceb8ea2a05b80f5e78e4f5bca&profile_id=164" type="video/mp4">
+      <!-- Fallback to poster image -->
+    </video>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content reveal">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <span>Accra · Ghana · Est. 2008</span>
+      <div class="hero-eyebrow-line"></div>
+    </div>
+    <h1 class="hero-title">
+      Your <em>Dream Property</em><br>Awaits in Accra
+    </h1>
+    <p class="hero-sub">Ghana's most trusted real estate agency. 18 years of expertise. Over 370 properties sold. We treat every client as royalty.</p>
+    <div class="hero-btns">
+      <a href="https://ladyr-realty.com/property-search/" target="_blank" class="btn-primary">Search Properties</a>
+      <a href="#contact" class="btn-outline">Free Consultation</a>
+    </div>
+  </div>
+
+  <!-- Hero Search Bar -->
+  <div class="hero-search">
+    <div class="search-field">
+      <label for="s-type">Property Type</label>
+      <select id="s-type">
+        <option value="">All Types</option>
+        <option>Apartment</option>
+        <option>House / Villa</option>
+        <option>Land / Plot</option>
+        <option>Commercial</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label for="s-area">Location</label>
+      <select id="s-area">
+        <option value="">All Areas</option>
+        <option>Airport Residential</option>
+        <option>East Legon</option>
+        <option>Cantonments</option>
+        <option>Trasacco Valley</option>
+        <option>Tema</option>
+        <option>Lakeside Estates</option>
+        <option>Roman Ridge</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label for="s-budget">Max Budget (USD)</label>
+      <select id="s-budget">
+        <option value="">Any Budget</option>
+        <option>Under $100,000</option>
+        <option>$100k – $200k</option>
+        <option>$200k – $500k</option>
+        <option>$500k – $1M</option>
+        <option>$1M+</option>
+      </select>
+    </div>
+    <div class="search-field">
+      <label for="s-intent">I Want To</label>
+      <select id="s-intent">
+        <option>Buy</option>
+        <option>Rent (Long Term)</option>
+        <option>Short Stay</option>
+        <option>Invest</option>
+      </select>
+    </div>
+    <button class="search-btn" onclick="searchProperties()">Search</button>
+  </div>
+
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>Scroll</span>
+  </div>
+</section>
+
+<!-- =============================================
+     STATS BAR
+============================================= -->
+<div id="stats-bar">
+  <div class="stats-inner">
+    <div class="stat-item reveal">
+      <div class="stat-num" data-count="370">0</div>
+      <div class="stat-label">Properties Sold & Let</div>
+    </div>
+    <div class="stat-item reveal reveal-d1">
+      <div class="stat-num" data-count="18">0</div>
+      <div class="stat-label">Years of Excellence</div>
+    </div>
+    <div class="stat-item reveal reveal-d2">
+      <div class="stat-num" data-count="21">0</div>
+      <div class="stat-label">Dedicated Professionals</div>
+    </div>
+    <div class="stat-item reveal reveal-d3">
+      <div class="stat-num" data-count="2" data-suffix=" Awards">0</div>
+      <div class="stat-label">Industry Recognition</div>
+    </div>
+  </div>
+</div>
+
+<!-- =============================================
+     FEATURED PROPERTIES
+============================================= -->
+<section id="properties">
+  <div class="properties-header">
+    <div>
+      <div class="section-label reveal">
+        <div class="section-label-line"></div>
+        <span>Featured Listings</span>
+      </div>
+      <h2 class="section-title reveal reveal-d1">Exceptional <em>Properties</em><br>in Accra</h2>
+    </div>
+    <div class="property-filters reveal reveal-d2">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="sale">For Sale</button>
+      <button class="filter-btn" data-filter="rent">To Let</button>
+      <button class="filter-btn" data-filter="short">Short Stay</button>
+    </div>
+  </div>
+
+  <div class="properties-grid" id="prop-grid">
+    <!-- Property 1 — Featured -->
+    <div class="prop-card" data-type="sale">
+      <div class="prop-img-wrap">
+        <img class="prop-img" src="https://images.unsplash.com/photo-1613977257363-707ba9348227?w=1200&q=80&auto=format" alt="Luxury 7-Bedroom Mansion, Tema" loading="lazy">
+        <span class="prop-badge">For Sale</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-price"><span class="currency">USD </span>350,000</div>
+        <div class="prop-name">Luxury 7-Bedroom Mansion</div>
+        <div class="prop-loc">📍 Tema Community 25, Greater Accra</div>
+        <div class="prop-specs">
+          <div class="prop-spec"><b>7</b>Beds</div>
+          <div class="prop-spec"><b>6</b>Baths</div>
+          <div class="prop-spec"><b>480 m²</b>Area</div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+          <a href="https://ladyr-realty.com/index.php/single-property/?propID=1608&image_field_id=21" target="_blank" class="btn-primary" style="font-size:0.52rem;padding:10px 20px">View Details</a>
+          <a href="https://wa.me/233204123498?text=Hello%20Lady%20R%20Realty%2C%20I%20am%20interested%20in%20the%20Luxury%207-Bedroom%20Mansion%20at%20Tema%20Community%2025%20(USD%20350%2C000).%20Please%20arrange%20a%20viewing." target="_blank" class="prop-wa-btn">📱 Book Viewing</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Property 2 -->
+    <div class="prop-card" data-type="rent">
+      <div class="prop-img-wrap">
+        <img class="prop-img" src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?w=900&q=80&auto=format" alt="Furnished 1 Bedroom Cantonments" loading="lazy">
+        <span class="prop-badge">To Let</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-price"><span class="currency">USD </span>1,700 <span style="font-size:0.7em;color:var(--text-muted)">/month</span></div>
+        <div class="prop-name">Deluxe Furnished Apartment</div>
+        <div class="prop-loc">📍 Cantonments, Accra</div>
+        <div class="prop-specs">
+          <div class="prop-spec"><b>1</b>Bed</div>
+          <div class="prop-spec"><b>1</b>Bath</div>
+          <div class="prop-spec"><b>Furnished</b>Ready</div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+          <a href="https://ladyr-realty.com/index.php/single-property/?propID=1114&image_field_id=21" target="_blank" class="btn-primary" style="font-size:0.52rem;padding:10px 20px">View Details</a>
+          <a href="https://wa.me/233204123498?text=Hello%20Lady%20R%20Realty%2C%20I%20am%20interested%20in%20the%20Furnished%20Apartment%20in%20Cantonments%20at%20USD%201%2C700%2Fmonth.%20Please%20arrange%20a%20viewing." target="_blank" class="prop-wa-btn">📱 Book Viewing</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Property 3 -->
+    <div class="prop-card" data-type="sale">
+      <div class="prop-img-wrap">
+        <img class="prop-img" src="https://images.unsplash.com/photo-1570129477492-45c003edd2be?w=900&q=80&auto=format" alt="4 Bedroom House Lakeside Estates" loading="lazy">
+        <span class="prop-badge">For Sale</span>
+      </div>
+      <div class="prop-info">
+        <div class="prop-price"><span class="currency">USD </span>285,000</div>
+        <div class="prop-name">4-Bedroom Family Home</div>
+        <div class="prop-loc">📍 Lakeside Estates, Accra</div>
+        <div class="prop-specs">
+          <div class="prop-spec"><b>4</b>Beds</div>
+          <div class="prop-spec"><b>3</b>Baths</div>
+          <div class="prop-spec"><b>280 m²</b>Area</div>
+        </div>
+        <div style="display:flex;gap:10px;margin-top:16px;flex-wrap:wrap;">
+          <a href="https://ladyr-realty.com/index.php/single-property/?propID=430&image_field_id=21" target="_blank" class="btn-primary" style="font-size:0.52rem;padding:10px 20px">View Details</a>
+          <a href="https://wa.me/233204123498?text=Hello%20Lady%20R%20Realty%2C%20I%20am%20interested%20in%20the%204-Bedroom%20House%20at%20Lakeside%20Estates%20(USD%20285%2C000).%20Please%20arrange%20a%20viewing." target="_blank" class="prop-wa-btn">📱 Book Viewing</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="properties-cta reveal">
+    <a href="https://ladyr-realty.com/property-search/" target="_blank" class="btn-primary">View All Properties</a>
+    <p>Explore our complete portfolio of premium Accra properties</p>
+  </div>
+</section>
+
+<!-- =============================================
+     SALES TICKER
+============================================= -->
+<div id="sales-ticker" aria-hidden="true">
+  <div class="ticker-inner">
+    <div class="ticker-item"><span class="ticker-dot"></span>RECENTLY SOLD — East Legon Villa · USD 420,000</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>LET — Airport Residential 3-Bed · USD 3,500/mo</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>SOLD — Trasacco Valley Mansion · USD 1,100,000</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>UNDER MANAGEMENT — 12-Unit Apartment Block · East Legon</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>SOLD — Roman Ridge Land Plot · USD 180,000</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>RECENTLY SOLD — East Legon Villa · USD 420,000</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>LET — Airport Residential 3-Bed · USD 3,500/mo</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>SOLD — Trasacco Valley Mansion · USD 1,100,000</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>UNDER MANAGEMENT — 12-Unit Apartment Block · East Legon</div>
+    <div class="ticker-item"><span class="ticker-dot"></span>SOLD — Roman Ridge Land Plot · USD 180,000</div>
+  </div>
+</div>
+
+<!-- =============================================
+     ABOUT
+============================================= -->
+<section id="about">
+  <div class="about-img-stack reveal">
+    <img class="about-img-main"
+      src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=900&q=80&auto=format"
+      alt="Lady R Realty — Premium properties in Accra"
+      loading="lazy">
+    <img class="about-img-accent"
+      src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&q=80&auto=format"
+      alt="Property Management"
+      loading="lazy">
+    <div class="about-award-badge">
+      <div class="num">370<span style="font-size:0.45em">+</span></div>
+      <div class="lbl">Properties Sold & Let</div>
+    </div>
+  </div>
+  <div class="about-text">
+    <div class="section-label reveal">
+      <div class="section-label-line"></div>
+      <span>About Lady R</span>
+    </div>
+    <h2 class="section-title reveal reveal-d1">Where Expertise <em>Meets</em><br>True Passion</h2>
+    <p class="reveal reveal-d2">Lady R Real Estate Services Ltd. is a wholly Ghanaian-owned real estate solutions hub, founded in 2008 by Mrs. Regina Koomson at the Airport Residential Area in Accra. For over 18 years, we have been the trusted bridge between property dreams and reality — <strong>treating every tenant and homeowner as royalty.</strong></p>
+    <p class="reveal reveal-d3">Our vision is to be the global solutions centre for real estate challenges across Africa and beyond. Whether you are buying your first home, building an investment portfolio, or seeking expert management for your existing properties, our team brings world-class expertise with a deeply personal touch.</p>
+    <div class="about-values reveal reveal-d4">
+      <div class="about-value-item">
+        <h4>Our Mission</h4>
+        <p>Solving real estate problems with expertise, passion, and 18 years of accumulated experience.</p>
+      </div>
+      <div class="about-value-item">
+        <h4>Our Vision</h4>
+        <p>To become the global solutions centre for real estate across West Africa and the diaspora.</p>
+      </div>
+      <div class="about-value-item">
+        <h4>Our Promise</h4>
+        <p>Every client is treated as royalty. Every transaction is executed with precision and care.</p>
+      </div>
+      <div class="about-value-item">
+        <h4>Our Reach</h4>
+        <p>Serving Accra locals, diaspora buyers in UK, US & Canada, and international investors.</p>
+      </div>
+    </div>
+    <a href="https://ladyr-realty.com/about-us/" target="_blank" class="btn-primary reveal reveal-d5">Our Full Story</a>
+  </div>
+</section>
+
+<!-- =============================================
+     SERVICES
+============================================= -->
+<section id="services">
+  <div style="max-width:640px">
+    <div class="section-label reveal">
+      <div class="section-label-line"></div>
+      <span>What We Do</span>
+    </div>
+    <h2 class="section-title reveal reveal-d1">Complete Real Estate <em>Solutions</em></h2>
+    <p class="section-subtitle reveal reveal-d2">From finding your first home to managing your property portfolio — we cover every dimension of the Accra real estate market.</p>
+  </div>
+  <div class="services-grid">
+    <div class="service-card reveal">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48"><path d="M6 40V20L24 6l18 14v20H30V28H18v12z"/></svg>
+      </div>
+      <h3>Property Sales</h3>
+      <p>Apartments, houses, villas, and land plots across Accra's finest neighbourhoods. We broker the best deals and handle all documentation from start to finish.</p>
+      <a href="https://ladyr-realty.com/property-search/" target="_blank" class="service-link">Browse Listings</a>
+    </div>
+    <div class="service-card reveal reveal-d1">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48"><rect x="6" y="14" width="36" height="28" rx="1"/><path d="M16 14V10a8 8 0 0116 0v4"/><circle cx="24" cy="28" r="3"/></svg>
+      </div>
+      <h3>Long-Term Rentals</h3>
+      <p>1–2 year leases for individuals and families. We identify the right tenants, handle all legal documentation, and ensure a smooth, hassle-free tenancy.</p>
+      <a href="https://ladyr-realty.com/property-search/" target="_blank" class="service-link">Find a Rental</a>
+    </div>
+    <div class="service-card reveal reveal-d2">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48"><path d="M12 12h24v8H12zM8 24h32v16H8z"/><path d="M16 40v4m16-4v4"/></svg>
+      </div>
+      <h3>Short-Term & Serviced</h3>
+      <p>Premium short stays, holiday lets, and Airbnb management across Accra. Perfect for executives, diaspora visitors, and corporate relocations.</p>
+      <a href="https://ladyr-realty.com/property-search/" target="_blank" class="service-link">Short Stays</a>
+    </div>
+    <div class="service-card reveal reveal-d3">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48"><path d="M4 24L24 4l20 20v20H30V32H18v12H4z"/><circle cx="24" cy="20" r="4"/></svg>
+      </div>
+      <h3>Property Management</h3>
+      <p>Ideal for landlords who live abroad. We manage single properties and entire apartment blocks — maintenance, tenant relations, rent collection, and monthly reporting.</p>
+      <a href="#contact" class="service-link">Get a Quote</a>
+    </div>
+    <div class="service-card reveal reveal-d4">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48"><path d="M8 40V22l16-14 16 14v18h-9V28H17v12z"/><path d="M4 22l20-18 20 18"/></svg>
+      </div>
+      <h3>Property Valuation</h3>
+      <p>Accurate, data-driven valuations from accredited professionals. Free for first-time clients. Know your property's true market worth before you sell or let.</p>
+      <a href="https://wa.me/233204123498?text=Hello%2C%20I%20would%20like%20to%20request%20a%20free%20property%20valuation%20from%20Lady%20R%20Realty." target="_blank" class="service-link">Free Valuation</a>
+    </div>
+    <div class="service-card reveal reveal-d5">
+      <div class="service-icon">
+        <svg viewBox="0 0 48 48"><path d="M8 16h32M8 24h32M8 32h20"/><circle cx="38" cy="34" r="8"/><path d="M36 34l2 2 4-4"/></svg>
+      </div>
+      <h3>Investment Advisory</h3>
+      <p>Strategic guidance for property investors. We identify high-yield opportunities, analyse capital growth potential, and advise on the best areas to buy in Accra.</p>
+      <a href="#contact" class="service-link">Start Investing</a>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     MEDIA FEATURES
+============================================= -->
+<div id="media-features">
+  <p class="media-label">As Featured In & Recognised By</p>
+  <div class="media-logos">
+    <a href="https://ladyr-realty.com/mrs-regina-koomson-honoured-among-the-100-titans-2025/" target="_blank" class="media-logo-item">The Business 100 Titans 2025</a>
+    <a href="https://ladyr-realty.com/lady-r-wins-excellence-award-in-property-management/" target="_blank" class="media-logo-item">ARCE Awards</a>
+    <span class="media-logo-item">GREPA</span>
+    <span class="media-logo-item">ACEACRES 2025</span>
+    <a href="https://www.linkedin.com/in/regina-christian-koomson" target="_blank" class="media-logo-item">IFMA Member</a>
+    <span class="media-logo-item">Ghana Real Estate</span>
+  </div>
+</div>
+
+<!-- =============================================
+     TESTIMONIALS
+============================================= -->
+<section id="testimonials">
+  <div class="testimonials-header">
+    <div class="section-label reveal">
+      <div class="section-label-line"></div>
+      <span>Client Stories</span>
+    </div>
+    <h2 class="section-title reveal reveal-d1">What Our <em>Clients</em> Say</h2>
+  </div>
+  <div class="testimonials-track-wrap">
+    <div class="testimonials-track" id="test-track">
+      <!-- Card 1 -->
+      <div class="testimonial-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"We were based in London and needed to buy a home in Accra remotely. Lady R Realty made the entire process seamless — from virtual property tours to handling every piece of documentation. We signed and moved in without a single trip to Ghana. Truly world-class service."</p>
+        <div class="test-author">
+          <div class="test-avatar">AO</div>
+          <div>
+            <div class="test-name">Ama &amp; Kwame Osei-Bonsu</div>
+            <div class="test-role">Diaspora Buyers — London, UK</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="testimonial-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"Lady R manages five of my rental properties in East Legon and Airport Residential. The monthly reports are detailed, the maintenance is prompt, and I've never had a prolonged vacancy. Mrs. Koomson and her team are simply exceptional. I can invest with total confidence."</p>
+        <div class="test-author">
+          <div class="test-avatar">KA</div>
+          <div>
+            <div class="test-name">Kofi Asante-Mensah</div>
+            <div class="test-role">Property Investor — Accra</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="testimonial-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"As a corporate relocation, we needed a fully furnished executive apartment urgently. Lady R found us three options within 24 hours, all within our budget in Cantonments. The professionalism was outstanding — our entire team was settled within a week."</p>
+        <div class="test-author">
+          <div class="test-avatar">SC</div>
+          <div>
+            <div class="test-name">Serena Clarke</div>
+            <div class="test-role">Head of Operations, Multinational Corp.</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 4 -->
+      <div class="testimonial-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"Selling our family property was an emotional process. Mrs. Koomson treated us with extraordinary sensitivity and secured a price that exceeded our expectations. The legal documentation was handled flawlessly. I recommend Lady R to every family in this situation."</p>
+        <div class="test-author">
+          <div class="test-avatar">EA</div>
+          <div>
+            <div class="test-name">Efua Asante</div>
+            <div class="test-role">Family Property Sale — Trasacco Valley</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 5 -->
+      <div class="testimonial-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"I was a first-time buyer, completely overwhelmed by the process. Lady R Realty guided me every step of the way — valuation, negotiation, legal checks, everything. I got my dream 3-bedroom in East Legon at the right price. Forever grateful."</p>
+        <div class="test-author">
+          <div class="test-avatar">NA</div>
+          <div>
+            <div class="test-name">Nana Addo Boateng</div>
+            <div class="test-role">First-Time Buyer — Accra</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 6 -->
+      <div class="testimonial-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"Our investment group purchased two commercial properties through Lady R and the ROI has been outstanding. Their market knowledge is unmatched in Accra — they knew the right areas, the right prices, and the right timing. True professionals."</p>
+        <div class="test-author">
+          <div class="test-avatar">GI</div>
+          <div>
+            <div class="test-name">Gideon &amp; Partners</div>
+            <div class="test-role">Investment Group — Accra / Toronto</div>
+          </div>
+        </div>
+      </div>
+      <!-- Card 7 -->
+      <div class="testimonial-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"My Airbnb property was being managed inconsistently before Lady R took over. Now it runs like clockwork — 90%+ occupancy, professional guest communications, and the highest reviews I've ever had. My monthly income increased by 40%."</p>
+        <div class="test-author">
+          <div class="test-avatar">YD</div>
+          <div>
+            <div class="test-name">Yaa Darkwah</div>
+            <div class="test-role">Airbnb Host — Airport Residential</div>
+          </div>
+        </div>
+      </div>
+      <!-- Duplicate set for seamless loop -->
+      <div class="testimonial-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"We were based in London and needed to buy a home in Accra remotely. Lady R Realty made the entire process seamless — from virtual property tours to handling every piece of documentation. We signed and moved in without a single trip to Ghana."</p>
+        <div class="test-author">
+          <div class="test-avatar">AO</div>
+          <div>
+            <div class="test-name">Ama &amp; Kwame Osei-Bonsu</div>
+            <div class="test-role">Diaspora Buyers — London, UK</div>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="test-stars"><span>★</span><span>★</span><span>★</span><span>★</span><span>★</span></div>
+        <p class="test-quote">"Lady R manages five of my rental properties. The monthly reports are detailed, the maintenance is prompt, and I've never had a prolonged vacancy. Mrs. Koomson and her team are simply exceptional."</p>
+        <div class="test-author">
+          <div class="test-avatar">KA</div>
+          <div>
+            <div class="test-name">Kofi Asante-Mensah</div>
+            <div class="test-role">Property Investor — Accra</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     LEADER / CEO
+============================================= -->
+<section id="leader" style="padding:0">
+  <div class="leader-img">
+    <img
+      src="https://ladyr-realty.com/wp-content/uploads/2020/09/HomePage-Image-3.jpg"
+      alt="Mrs. Regina Koomson — Founder &amp; CEO, Lady R Real Estate Services Ltd."
+      loading="lazy"
+      onerror="this.src='https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=900&q=80&auto=format'"
+    >
+  </div>
+  <div class="leader-content">
+    <div class="section-label reveal">
+      <div class="section-label-line"></div>
+      <span>Our Founder</span>
+    </div>
+    <h2 class="section-title reveal reveal-d1">Mrs. Regina<br><em>Koomson</em></h2>
+    <p class="title-sub reveal reveal-d1">Founder &amp; CEO — Lady R Real Estate Services Ltd.</p>
+    <p class="reveal reveal-d2">With over 18 years of hands-on experience in the Ghanaian real estate market, Mrs. Regina Koomson is one of Accra's most respected and trusted property professionals. As a certified IFMA member and thought leader in the African real estate space, she has built Lady R from a single-office agency into Ghana's premier real estate services hub.</p>
+    <p class="reveal reveal-d3">Her philosophy is simple: every client deserves to be treated as royalty. This belief has driven over 370 successful transactions and earned the trust of investors, families, corporations, and diaspora Ghanaians across four continents.</p>
+    <div class="leader-awards reveal reveal-d4">
+      <div class="leader-award-item">
+        <div class="award-icon">🏆</div>
+        <div class="award-text">
+          <h5>Excellence in Property Management — ARCE Awards, 2022</h5>
+          <p>Honoured at the ARCE (African Real Estate Conference &amp; Expo) awards night in September 2022 for outstanding performance and innovation in property management.</p>
+        </div>
+      </div>
+      <div class="leader-award-item">
+        <div class="award-icon">🌟</div>
+        <div class="award-text">
+          <h5>100 Titans 2025 — The Business Magazine, October 2025</h5>
+          <p>Mrs. Koomson was honoured among Africa's 100 most influential business leaders for her transformative impact on Ghana's real estate sector.</p>
+        </div>
+      </div>
+      <div class="leader-award-item">
+        <div class="award-icon">🎤</div>
+        <div class="award-text">
+          <h5>Speaker — ACEACRES 2025 Summit</h5>
+          <p>Featured at the 3rd African Continental Engineering, Architecture, Construction &amp; Real Estate Summit 2025 as a thought leader in sustainable property development.</p>
+        </div>
+      </div>
+    </div>
+    <div class="leader-social reveal reveal-d5">
+      <a href="https://www.linkedin.com/in/regina-christian-koomson" target="_blank" aria-label="LinkedIn">in</a>
+      <a href="https://www.instagram.com/lady_r_realty/" target="_blank" aria-label="Instagram">📸</a>
+      <a href="https://www.youtube.com/@Lady-RRealty" target="_blank" aria-label="YouTube">▶</a>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     TOOLS
+============================================= -->
+<section id="tools">
+  <div style="max-width:640px;margin-bottom:0">
+    <div class="section-label reveal">
+      <div class="section-label-line"></div>
+      <span>Smart Property Tools</span>
+    </div>
+    <h2 class="section-title reveal reveal-d1">Make Informed <em>Decisions</em></h2>
+  </div>
+  <div class="tools-tabs reveal reveal-d2">
+    <button class="tool-tab active" data-tab="roi">ROI Calculator</button>
+    <button class="tool-tab" data-tab="mortgage">Mortgage Estimator</button>
+    <button class="tool-tab" data-tab="quiz">Property Match Quiz</button>
+  </div>
+
+  <!-- ROI Calculator -->
+  <div class="tool-pane active" id="tab-roi">
+    <div class="calc-form">
+      <div class="calc-group">
+        <label>Property Purchase Price (USD)</label>
+        <input type="number" id="roi-price" placeholder="e.g. 300000" value="300000">
+      </div>
+      <div class="calc-group">
+        <label>Expected Monthly Rent (USD)</label>
+        <input type="number" id="roi-rent" placeholder="e.g. 2000" value="2000">
+      </div>
+      <div class="calc-group">
+        <label>Monthly Expenses (USD) — Incl. management, maintenance</label>
+        <input type="number" id="roi-expenses" placeholder="e.g. 300" value="300">
+      </div>
+      <div class="calc-group">
+        <label>Expected Annual Appreciation (%)</label>
+        <input type="number" id="roi-growth" placeholder="e.g. 6" value="6">
+      </div>
+      <button class="btn-primary" onclick="calcROI()">Calculate Returns</button>
+    </div>
+    <div class="calc-result">
+      <h3>Your Investment Snapshot</h3>
+      <div class="result-grid">
+        <div class="result-item"><div class="result-label">Gross Rental Yield</div><div class="result-val" id="r-yield">8.0%</div></div>
+        <div class="result-item"><div class="result-label">Net Annual Income</div><div class="result-val" id="r-net">$20,400</div></div>
+        <div class="result-item"><div class="result-label">Payback Period</div><div class="result-val" id="r-payback">14.7 yrs</div></div>
+        <div class="result-item"><div class="result-label">5-Year Property Value</div><div class="result-val" id="r-value">$401,467</div></div>
+      </div>
+      <a href="https://wa.me/233204123498?text=Hello%20Lady%20R%20Realty%2C%20I%20have%20used%20your%20ROI%20calculator%20and%20would%20like%20expert%20investment%20advice." target="_blank" class="btn-primary" style="margin-top:24px;display:inline-block;font-size:0.55rem">Speak With an Advisor →</a>
+    </div>
+  </div>
+
+  <!-- Mortgage Estimator -->
+  <div class="tool-pane" id="tab-mortgage">
+    <div class="calc-form">
+      <div class="calc-group">
+        <label>Property Value (USD)</label>
+        <input type="number" id="m-price" placeholder="e.g. 250000" value="250000">
+      </div>
+      <div class="calc-group">
+        <label>Down Payment (%)</label>
+        <input type="number" id="m-down" placeholder="e.g. 20" value="20">
+      </div>
+      <div class="calc-group">
+        <label>Annual Interest Rate (%)</label>
+        <input type="number" id="m-rate" placeholder="e.g. 22" value="22">
+      </div>
+      <div class="calc-group">
+        <label>Loan Term (Years)</label>
+        <select id="m-term">
+          <option value="5">5 Years</option>
+          <option value="10">10 Years</option>
+          <option value="15" selected>15 Years</option>
+          <option value="20">20 Years</option>
+          <option value="25">25 Years</option>
+        </select>
+      </div>
+      <button class="btn-primary" onclick="calcMortgage()">Estimate Payments</button>
+    </div>
+    <div class="calc-result">
+      <h3>Mortgage Breakdown</h3>
+      <div class="result-grid">
+        <div class="result-item"><div class="result-label">Monthly Payment</div><div class="result-val" id="m-monthly">$2,400</div></div>
+        <div class="result-item"><div class="result-label">Loan Amount</div><div class="result-val" id="m-loan">$200,000</div></div>
+        <div class="result-item"><div class="result-label">Total Interest</div><div class="result-val" id="m-interest">$232,000</div></div>
+        <div class="result-item"><div class="result-label">Total Repayment</div><div class="result-val" id="m-total">$432,000</div></div>
+      </div>
+      <p style="font-size:0.72rem;color:var(--text-muted);margin-top:16px">*Based on indicative Ghana bank rates. Actual rates vary. Consult a mortgage advisor.</p>
+    </div>
+  </div>
+
+  <!-- Property Match Quiz -->
+  <div class="tool-pane" id="tab-quiz">
+    <div style="max-width:540px">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="quiz-fill" style="width:20%"></div></div>
+      <div id="quiz-questions">
+        <div class="quiz-question active" data-q="0">
+          <p class="quiz-q">What is your primary goal?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-val="live">Buy a home to live in</button>
+            <button class="quiz-opt" data-val="invest">Buy as an investment / rental</button>
+            <button class="quiz-opt" data-val="rent">Rent — I'm not ready to buy</button>
+            <button class="quiz-opt" data-val="short">Short-term accommodation needed</button>
+          </div>
+        </div>
+        <div class="quiz-question" data-q="1">
+          <p class="quiz-q">What is your budget range?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-val="low">Under USD 100,000</button>
+            <button class="quiz-opt" data-val="mid">USD 100k – 300k</button>
+            <button class="quiz-opt" data-val="high">USD 300k – 700k</button>
+            <button class="quiz-opt" data-val="ultra">USD 700k+</button>
+          </div>
+        </div>
+        <div class="quiz-question" data-q="2">
+          <p class="quiz-q">Which area of Accra suits you best?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-val="airport">Airport / Cantonments / Roman Ridge</button>
+            <button class="quiz-opt" data-val="legon">East Legon / Trasacco Valley</button>
+            <button class="quiz-opt" data-val="tema">Tema / Lakeside</button>
+            <button class="quiz-opt" data-val="any">I'm flexible</button>
+          </div>
+        </div>
+        <div class="quiz-question" data-q="3">
+          <p class="quiz-q">How many bedrooms do you need?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-val="1">1–2 Bedrooms</button>
+            <button class="quiz-opt" data-val="3">3 Bedrooms</button>
+            <button class="quiz-opt" data-val="4">4 Bedrooms</button>
+            <button class="quiz-opt" data-val="5">5+ Bedrooms / Large Estate</button>
+          </div>
+        </div>
+        <div class="quiz-question" data-q="4">
+          <p class="quiz-q">What matters most to you in a property?</p>
+          <div class="quiz-options">
+            <button class="quiz-opt" data-val="security">24/7 Security &amp; Gated Community</button>
+            <button class="quiz-opt" data-val="yield">High rental yield / investment return</button>
+            <button class="quiz-opt" data-val="family">Family-friendly neighbourhood &amp; schools</button>
+            <button class="quiz-opt" data-val="luxury">Luxury finishes &amp; premium lifestyle</button>
+          </div>
+        </div>
+      </div>
+      <div class="quiz-result-panel" id="quiz-result">
+        <div class="result-card">
+          <h3 id="quiz-res-title">Your Perfect Match</h3>
+          <p id="quiz-res-text">Based on your answers, here is our recommendation.</p>
+          <a id="quiz-res-link" href="https://ladyr-realty.com/property-search/" target="_blank" class="btn-primary">View Matched Properties →</a>
+        </div>
+      </div>
+    </div>
+    <div style="background:var(--bg);border:1px solid var(--border);padding:32px">
+      <p style="font-family:var(--font-brand);font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:var(--accent);margin-bottom:16px">Why Use Our Quiz?</p>
+      <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.8;margin-bottom:20px">Our smart matching quiz analyses your lifestyle, budget, and priorities to recommend the most suitable property type and location in Accra — saving you hours of searching.</p>
+      <p style="font-size:0.85rem;color:var(--text-muted);line-height:1.8">After completing the quiz, one of our expert agents will contact you within 2 hours with a personalised shortlist.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     TEAM
+============================================= -->
+<section id="team">
+  <div class="section-label reveal">
+    <div class="section-label-line"></div>
+    <span>The Team</span>
+  </div>
+  <h2 class="section-title reveal reveal-d1">Meet the <em>Experts</em><br>Behind Your Transaction</h2>
+  <div class="team-grid" style="margin-top:64px">
+    <div class="team-card reveal">
+      <div class="team-img-wrap">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&q=80&auto=format" alt="Mrs. Regina Koomson" loading="lazy">
+      </div>
+      <div class="team-info">
+        <div class="team-name">Mrs. Regina Koomson</div>
+        <div class="team-role">Founder &amp; Chief Executive Officer</div>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-d1">
+      <div class="team-img-wrap">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80&auto=format" alt="Senior Property Advisor" loading="lazy">
+      </div>
+      <div class="team-info">
+        <div class="team-name">Kwame Asante</div>
+        <div class="team-role">Senior Property Advisor</div>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-d2">
+      <div class="team-img-wrap">
+        <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=600&q=80&auto=format" alt="Property Manager" loading="lazy">
+      </div>
+      <div class="team-info">
+        <div class="team-name">Abena Owusu</div>
+        <div class="team-role">Head of Property Management</div>
+      </div>
+    </div>
+    <div class="team-card reveal reveal-d3">
+      <div class="team-img-wrap">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=600&q=80&auto=format" alt="Sales Director" loading="lazy">
+      </div>
+      <div class="team-info">
+        <div class="team-name">Emmanuel Boateng</div>
+        <div class="team-role">Director of Sales &amp; Leasing</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     NEWS
+============================================= -->
+<section id="news">
+  <div class="section-label reveal">
+    <div class="section-label-line"></div>
+    <span>News &amp; Insights</span>
+  </div>
+  <h2 class="section-title reveal reveal-d1">Market News &amp;<br><em>Company Updates</em></h2>
+  <div class="news-grid">
+    <div class="news-card reveal">
+      <div class="news-img-wrap">
+        <img class="news-img" src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=700&q=80&auto=format" alt="Mrs. Koomson 100 Titans 2025" loading="lazy">
+      </div>
+      <div class="news-body">
+        <div class="news-cat">Awards &amp; Recognition</div>
+        <h3 class="news-title">Mrs. Regina Koomson Honoured Among the 100 Titans 2025</h3>
+        <p class="news-excerpt">Lady R Real Estate Services Ltd. proudly celebrates our CEO, Mrs. Regina Koomson, honoured as one of Africa's 100 most influential business leaders.</p>
+        <div class="news-date">October 17, 2025</div><br>
+        <a href="https://ladyr-realty.com/mrs-regina-koomson-honoured-among-the-100-titans-2025/" target="_blank" class="news-read-more">Read Article</a>
+      </div>
+    </div>
+    <div class="news-card reveal reveal-d1">
+      <div class="news-img-wrap">
+        <img class="news-img" src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80&auto=format" alt="ARCE Excellence Award" loading="lazy">
+      </div>
+      <div class="news-body">
+        <div class="news-cat">Industry Awards</div>
+        <h3 class="news-title">Lady R Wins Excellence Award in Property Management</h3>
+        <p class="news-excerpt">In September 2022, Lady R was honoured at the ARCE awards night with an Excellence Award in Property Management — recognising innovation and outstanding service.</p>
+        <div class="news-date">October 20, 2022</div><br>
+        <a href="https://ladyr-realty.com/lady-r-wins-excellence-award-in-property-management/" target="_blank" class="news-read-more">Read Article</a>
+      </div>
+    </div>
+    <div class="news-card reveal reveal-d2">
+      <div class="news-img-wrap">
+        <img class="news-img" src="https://images.unsplash.com/photo-1460472178825-e5240623afd5?w=700&q=80&auto=format" alt="Accra Property Market" loading="lazy">
+      </div>
+      <div class="news-body">
+        <div class="news-cat">Market Intelligence</div>
+        <h3 class="news-title">Accra's Prime Residential Market: What Buyers Need to Know in 2025</h3>
+        <p class="news-excerpt">With vacancy rates stabilising and demand returning in East Legon and Airport Residential, Accra presents compelling opportunities for informed property investors.</p>
+        <div class="news-date">January 12, 2025</div><br>
+        <a href="https://ladyr-realty.com/news/" target="_blank" class="news-read-more">Read Article</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FAQ
+============================================= -->
+<section id="faq">
+  <div class="section-label reveal">
+    <div class="section-label-line"></div>
+    <span>FAQ</span>
+  </div>
+  <h2 class="section-title reveal reveal-d1">Frequently Asked <em>Questions</em></h2>
+  <div class="faq-grid" style="margin-top:64px">
+    <div class="faq-item">
+      <button class="faq-q">How do I start the process of buying a property with Lady R?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Begin by contacting us via phone, WhatsApp, or our booking form. We will schedule a free consultation to understand your needs, budget, and preferred areas. Our advisors will then curate a personalised shortlist of properties within 48 hours.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Can I buy property in Ghana from abroad?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Absolutely. We specialise in supporting diaspora Ghanaians in the UK, US, Canada, and Europe. We offer virtual property tours, handle all documentation remotely, and work with trusted solicitors to ensure your purchase is secure — without you needing to travel to Ghana.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What areas of Accra do you cover?<span class="faq-icon">+</span></button>
+      <div class="faq-a">We cover all major areas of Accra including Airport Residential, East Legon, Trasacco Valley, Cantonments, Roman Ridge, Tema, Lakeside Estates, Spintex Road, and beyond. If you have a specific area in mind, let us know.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What are your fees for property management?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Our property management fee is 10% of the monthly rent collected. This covers tenant management, maintenance coordination, rent collection, monthly reporting, and vacancy management. Contact us for a tailored quote based on your portfolio size.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How long does a property sale take in Ghana?<span class="faq-icon">+</span></button>
+      <div class="faq-a">On average, a property sale from agreement to full completion takes 4–12 weeks, depending on the complexity of documentation and legal processes. Our team works with experienced solicitors to ensure the process is as efficient as possible.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">Do you offer free property valuations?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Yes — we offer a complimentary property valuation for first-time clients. Our valuations are conducted by accredited professionals using up-to-date market data from across Accra. This service is limited monthly; please contact us to secure your slot.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">What currencies do you accept for property transactions?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Properties in Ghana are typically priced in US Dollars (USD) with Ghanaian Cedi (GHC) equivalents provided at current exchange rates. We work with reputable financial institutions and forex partners to facilitate smooth international transfers.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q">How do I list my property with Lady R for sale or rental?<span class="faq-icon">+</span></button>
+      <div class="faq-a">Contact us via phone, WhatsApp, or our online form. We will visit your property for an assessment and professional photography session, list it on our platform and across our network, and begin marketing immediately. Our commission is 3–5% on sales and one month's rent for tenancy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     INSTAGRAM
+============================================= -->
+<div id="instagram">
+  <div class="ig-header">
+    <div class="ig-title"><span class="ig-icon">📸</span> @lady_r_realty on Instagram</div>
+    <a href="https://www.instagram.com/lady_r_realty/" target="_blank" class="btn-outline" style="border-color:var(--border);color:var(--text-muted);padding:10px 22px;font-size:0.52rem">Follow Us</a>
+  </div>
+  <div class="ig-grid">
+    <a href="https://www.instagram.com/lady_r_realty/" target="_blank" class="ig-cell"><img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=400&q=70&auto=format" alt="Instagram" loading="lazy"><div class="ig-cell-overlay"><span>📷</span></div></a>
+    <a href="https://www.instagram.com/lady_r_realty/" target="_blank" class="ig-cell"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=400&q=70&auto=format" alt="Instagram" loading="lazy"><div class="ig-cell-overlay"><span>📷</span></div></a>
+    <a href="https://www.instagram.com/lady_r_realty/" target="_blank" class="ig-cell"><img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?w=400&q=70&auto=format" alt="Instagram" loading="lazy"><div class="ig-cell-overlay"><span>📷</span></div></a>
+    <a href="https://www.instagram.com/lady_r_realty/" target="_blank" class="ig-cell"><img src="https://images.unsplash.com/photo-1416331108676-a22ccb276e35?w=400&q=70&auto=format" alt="Instagram" loading="lazy"><div class="ig-cell-overlay"><span>📷</span></div></a>
+    <a href="https://www.instagram.com/lady_r_realty/" target="_blank" class="ig-cell"><img src="https://images.unsplash.com/photo-1605276374104-dee2a0ed3cd6?w=400&q=70&auto=format" alt="Instagram" loading="lazy"><div class="ig-cell-overlay"><span>📷</span></div></a>
+    <a href="https://www.instagram.com/lady_r_realty/" target="_blank" class="ig-cell"><img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?w=400&q=70&auto=format" alt="Instagram" loading="lazy"><div class="ig-cell-overlay"><span>📷</span></div></a>
+  </div>
+</div>
+
+<!-- =============================================
+     CONTACT
+============================================= -->
+<section id="contact">
+  <div class="contact-inner">
+    <div class="contact-info">
+      <div class="section-label reveal">
+        <div class="section-label-line"></div>
+        <span>Get In Touch</span>
+      </div>
+      <h2 class="section-title reveal reveal-d1">Let's Find Your<br><em>Perfect Property</em></h2>
+      <div class="contact-detail reveal reveal-d2">
+        <div class="contact-detail-icon">📞</div>
+        <div class="contact-detail-text">
+          <h5>Phone</h5>
+          <a href="tel:+233243660231">+233 024 366 0231</a>
+        </div>
+      </div>
+      <div class="contact-detail reveal reveal-d2">
+        <div class="contact-detail-icon">💬</div>
+        <div class="contact-detail-text">
+          <h5>WhatsApp</h5>
+          <a href="https://wa.me/233204123498" target="_blank">+233 020 412 3498</a>
+        </div>
+      </div>
+      <div class="contact-detail reveal reveal-d3">
+        <div class="contact-detail-icon">✉</div>
+        <div class="contact-detail-text">
+          <h5>Email</h5>
+          <a href="mailto:koomsonchristian.r@gmail.com">koomsonchristian.r@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-detail reveal reveal-d3">
+        <div class="contact-detail-icon">📍</div>
+        <div class="contact-detail-text">
+          <h5>Office</h5>
+          <p>Airport Residential Area<br>Greater Accra, Ghana</p>
+          <a href="https://maps.app.goo.gl/U4s3bGfGR2KpoGoB8" target="_blank" style="font-family:var(--font-brand);font-size:0.5rem;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:6px;margin-top:6px">View on Google Maps →</a>
+        </div>
+      </div>
+      <div class="contact-detail reveal reveal-d4">
+        <div class="contact-detail-icon">🕐</div>
+        <div class="contact-detail-text">
+          <h5>Opening Hours</h5>
+          <div class="hours-grid">
+            <div class="hours-row"><span class="day">Monday – Friday</span><span class="time">8:00 AM – 6:00 PM</span></div>
+            <div class="hours-row"><span class="day">Saturday</span><span class="time">9:00 AM – 3:00 PM</span></div>
+            <div class="hours-row"><span class="day">Sunday</span><span class="time">By appointment</span></div>
+          </div>
+          <div id="hours-badge" style="margin-top:12px"></div>
+        </div>
+      </div>
+      <div class="map-embed reveal">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.7!2d-0.1842!3d5.6037!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNcKwMzYnMTMuMyJOIDDCsDExJzAzLjUiVw!5e0!3m2!1sen!2sgh!4v1234567890"
+          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Lady R Realty office location"
+        ></iframe>
+      </div>
+    </div>
+
+    <div class="contact-form reveal reveal-d2">
+      <form id="main-form" onsubmit="handleForm(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>First Name *</label>
+            <input type="text" id="f-fname" placeholder="Ama" required>
+          </div>
+          <div class="form-group">
+            <label>Last Name *</label>
+            <input type="text" id="f-lname" placeholder="Mensah" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="f-email" placeholder="ama@example.com" required>
+        </div>
+        <div class="form-group">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" id="f-phone" placeholder="+233...">
+        </div>
+        <div class="form-group">
+          <label>I Am Interested In</label>
+          <select id="f-interest">
+            <option value="buy">Buying a Property</option>
+            <option value="rent">Renting a Property</option>
+            <option value="sell">Selling My Property</option>
+            <option value="manage">Property Management</option>
+            <option value="invest">Investment Advice</option>
+            <option value="valuation">Free Valuation</option>
+            <option value="short">Short Stay / Holiday Let</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Budget Range (USD)</label>
+          <select id="f-budget">
+            <option>Under $100,000</option>
+            <option>$100k – $300k</option>
+            <option>$300k – $700k</option>
+            <option>$700k – $1.5M</option>
+            <option>$1.5M+</option>
+            <option>Not applicable</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>Message</label>
+          <textarea id="f-message" placeholder="Tell us about your property goals..."></textarea>
+        </div>
+        <button type="submit" class="btn-primary" style="width:100%">Send Enquiry via WhatsApp</button>
+        <p class="form-note">By submitting, you agree to being contacted by Lady R Real Estate Services Ltd. Your details are never shared with third parties.</p>
+      </form>
+      <div id="form-success">✅ Thank you! Redirecting you to WhatsApp to complete your enquiry...</div>
+    </div>
+  </div>
+</section>
+
+<!-- =============================================
+     FOOTER
+============================================= -->
+<footer id="footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <div class="footer-brand-name">LADY <span class="accent">R</span> REALTY</div>
+      <div class="footer-tagline">Expertise With Passion</div>
+      <p class="footer-bio">Ghana's most trusted real estate services company. Specialising in property management, sales, and lettings across Accra since 2008. Treating every client as royalty.</p>
+      <div class="footer-social">
+        <a href="https://facebook.com/lady_r_realty" target="_blank" aria-label="Facebook">f</a>
+        <a href="https://www.instagram.com/lady_r_realty/" target="_blank" aria-label="Instagram">📸</a>
+        <a href="https://www.youtube.com/@Lady-RRealty" target="_blank" aria-label="YouTube">▶</a>
+        <a href="https://x.com/ladyrrealty" target="_blank" aria-label="Twitter/X">𝕏</a>
+        <a href="https://www.linkedin.com/in/regina-christian-koomson" target="_blank" aria-label="LinkedIn">in</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h5>Quick Links</h5>
+      <ul>
+        <li><a href="https://ladyr-realty.com/about-us/" target="_blank">About Us</a></li>
+        <li><a href="https://ladyr-realty.com/property-search/" target="_blank">All Properties</a></li>
+        <li><a href="#services">Our Services</a></li>
+        <li><a href="#tools">Property Tools</a></li>
+        <li><a href="https://ladyr-realty.com/news/" target="_blank">News &amp; Insights</a></li>
+        <li><a href="https://ladyr-realty.com/login/" target="_blank">Client Login</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="https://ladyr-realty.com/property-search/" target="_blank">Property Sales</a></li>
+        <li><a href="https://ladyr-realty.com/property-search/" target="_blank">Long-Term Rentals</a></li>
+        <li><a href="https://ladyr-realty.com/property-search/" target="_blank">Short Stays</a></li>
+        <li><a href="#contact">Property Management</a></li>
+        <li><a href="https://wa.me/233204123498?text=I%20would%20like%20a%20free%20property%20valuation." target="_blank">Free Valuation</a></li>
+        <li><a href="#contact">Investment Advisory</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h5>Contact Us</h5>
+      <div class="footer-contact-item">
+        <span>📍</span>
+        <span>Airport Residential Area,<br>Greater Accra, Ghana</span>
+      </div>
+      <div class="footer-contact-item">
+        <span>📞</span>
+        <span><a href="tel:+233243660231">+233 024 366 0231</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <span>💬</span>
+        <span><a href="https://wa.me/233204123498" target="_blank">+233 020 412 3498</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <span>✉</span>
+        <span><a href="mailto:koomsonchristian.r@gmail.com">koomsonchristian.r@gmail.com</a></span>
+      </div>
+      <div class="footer-contact-item">
+        <span>🌐</span>
+        <span><a href="https://ladyr-realty.com" target="_blank">ladyr-realty.com</a></span>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p class="footer-copy">© <span id="year"></span> Lady R Real Estate Services Ltd. All rights reserved. RC: Ghana</p>
+    <div class="footer-legal">
+      <a href="https://ladyr-realty.com/disclaimer/" target="_blank">Disclaimer</a>
+      <a href="#contact">Privacy</a>
+    </div>
+    <span class="footer-credit">Built by World-Class Digital Agency</span>
+  </div>
+</footer>
+
+<!-- =============================================
+     FLOATING ELEMENTS
+============================================= -->
+<div id="float-call">
+  <a href="tel:+233243660231" class="float-call-btn" aria-label="Call Lady R Realty">📞</a>
+  <span class="float-call-label">Call Us</span>
+</div>
+
+<button id="back-top" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+
+<!-- =============================================
+     POPUP
+============================================= -->
+<div id="popup-overlay" role="dialog" aria-modal="true" aria-label="Free property valuation offer">
+  <div class="popup-box">
+    <button class="popup-close" id="popup-close" aria-label="Close">✕</button>
+    <p class="popup-label">Limited Offer — This Week Only</p>
+    <h2 class="popup-title">Get Your FREE Property Valuation</h2>
+    <p class="popup-sub">Discover the true market value of your property in Accra. Our certified valuers provide a comprehensive report — completely free for new clients. Only 5 slots available this week.</p>
+    <div class="popup-limited">
+      <div class="lim-dot"></div>
+      <span>Only 5 free valuation slots available this week</span>
+    </div>
+    <input type="text" class="popup-input" id="popup-name" placeholder="Your Full Name">
+    <input type="tel" class="popup-input" id="popup-phone" placeholder="Your Phone / WhatsApp Number">
+    <button class="btn-primary" style="width:100%" onclick="popupSubmit()">Claim My Free Valuation</button>
+    <p class="popup-disclaimer">No obligation. Your data is private. <a href="https://ladyr-realty.com/disclaimer/" target="_blank">Privacy Policy</a></p>
+  </div>
+</div>
+
+<!-- =============================================
+     COOKIE BANNER
+============================================= -->
+<div id="cookie-bar">
+  <p class="cookie-text">We use cookies to improve your experience on our website. By continuing to browse, you agree to our <a href="https://ladyr-realty.com/disclaimer/" target="_blank">Privacy Policy</a> and use of cookies.</p>
+  <div class="cookie-btns">
+    <button class="cookie-accept" onclick="acceptCookie()">Accept All</button>
+    <button class="cookie-decline" onclick="declineCookie()">Decline</button>
+  </div>
+</div>
+
+<!-- =============================================
+     JAVASCRIPT
+============================================= -->
+<script>
+  /* =============================================
+     PRELOADER — CINEMATIC SEQUENCE
+  ============================================= */
+  (function() {
+    const brand = 'LADY R REALTY';
+    const brandEl = document.getElementById('pre-brand');
+    const wrapEl = document.getElementById('pre-brand-wrap');
+    const underlineEl = document.getElementById('pre-underline');
+    const taglineEl = document.getElementById('pre-tagline');
+
+    // Render characters
+    brand.split('').forEach((ch, i) => {
+      const span = document.createElement('span');
+      span.className = 'char' + (ch === ' ' ? ' space' : '');
+      span.textContent = ch === ' ' ? '\u00A0' : ch;
+      brandEl.appendChild(span);
+    });
+
+    // Timeline:
+    // 0.4s – slogan fades in
+    // 2.3s – slogan fades out
+    // 2.9s – "Established Since 2008" fades in
+    // 3.9s – est fades out
+    // 4.1s – brand name appears char by char
+    // 4.8s – underline expands, tagline appears
+    // 5.2s – overlay exits
+
+    setTimeout(() => {
+      wrapEl.classList.add('show');
+      const chars = brandEl.querySelectorAll('.char');
+      chars.forEach((c, i) => {
+        setTimeout(() => c.classList.add('in'), i * 72);
+      });
+    }, 4100);
+
+    setTimeout(() => {
+      underlineEl.classList.add('expand');
+      setTimeout(() => taglineEl.classList.add('show'), 400);
+    }, 4600);
+
+    setTimeout(() => {
+      const preloader = document.getElementById('preloader');
+      preloader.classList.add('exit');
+      document.body.classList.remove('preloading');
+      setTimeout(() => preloader.style.display = 'none', 1100);
+    }, 5300);
+  })();
+
+  /* =============================================
+     NAVIGATION
+  ============================================= */
+  const nav = document.getElementById('nav');
+  const hamburger = document.getElementById('hamburger');
+  const mobNav = document.getElementById('mob-nav');
+
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('back-top').classList.toggle('show', window.scrollY > 400);
+  }, { passive: true });
+
+  hamburger.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobNav.classList.toggle('open');
+  });
+
+  document.querySelectorAll('.mob-nav a').forEach(a => {
+    a.addEventListener('click', () => {
+      hamburger.classList.remove('open');
+      mobNav.classList.remove('open');
+    });
+  });
+
+  /* =============================================
+     THEME TOGGLE
+  ============================================= */
+  const themeBtn = document.getElementById('theme-toggle');
+  let isDark = true;
+  themeBtn.addEventListener('click', () => {
+    isDark = !isDark;
+    document.documentElement.setAttribute('data-theme', isDark ? 'dark' : 'light');
+    themeBtn.textContent = isDark ? '☀' : '🌙';
+  });
+
+  /* =============================================
+     SCROLL REVEAL
+  ============================================= */
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  /* =============================================
+     COUNTER ANIMATION
+  ============================================= */
+  const counterObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const end = parseInt(el.dataset.count);
+      const suffix = el.dataset.suffix || '+';
+      const dur = 2200;
+      const step = dur / end;
+      let cur = 0;
+      const timer = setInterval(() => {
+        cur = Math.min(cur + Math.ceil(end / 80), end);
+        el.textContent = cur + suffix;
+        if (cur >= end) clearInterval(timer);
+      }, step);
+      counterObs.unobserve(el);
+    });
+  }, { threshold: 0.5 });
+
+  document.querySelectorAll('[data-count]').forEach(el => counterObs.observe(el));
+
+  /* =============================================
+     PROPERTY FILTER
+  ============================================= */
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      const filter = this.dataset.filter;
+      document.querySelectorAll('.prop-card').forEach(card => {
+        card.style.display = (filter === 'all' || card.dataset.type === filter) ? '' : 'none';
+      });
+    });
+  });
+
+  /* =============================================
+     HERO SEARCH
+  ============================================= */
+  function searchProperties() {
+    const type = document.getElementById('s-type').value;
+    const area = document.getElementById('s-area').value;
+    const intent = document.getElementById('s-intent').value;
+    let msg = `Hello Lady R Realty, I am looking for a property with the following details:%0A`;
+    if (type) msg += `- Type: ${type}%0A`;
+    if (area) msg += `- Area: ${area}%0A`;
+    msg += `- Intent: ${intent}%0A`;
+    msg += `Please share matching listings with me. Thank you.`;
+    window.open(`https://wa.me/233204123498?text=${msg}`, '_blank');
+  }
+
+  /* =============================================
+     ROI CALCULATOR
+  ============================================= */
+  function calcROI() {
+    const price = parseFloat(document.getElementById('roi-price').value) || 0;
+    const rent = parseFloat(document.getElementById('roi-rent').value) || 0;
+    const expenses = parseFloat(document.getElementById('roi-expenses').value) || 0;
+    const growth = parseFloat(document.getElementById('roi-growth').value) / 100 || 0.06;
+    if (!price || !rent) return;
+
+    const annualRent = rent * 12;
+    const annualNet = (rent - expenses) * 12;
+    const grossYield = ((annualRent / price) * 100).toFixed(1) + '%';
+    const netAnnual = '$' + annualNet.toLocaleString('en-US', {maximumFractionDigits:0});
+    const payback = annualNet > 0 ? (price / annualNet).toFixed(1) + ' yrs' : '∞';
+    const value5 = '$' + Math.round(price * Math.pow(1 + growth, 5)).toLocaleString('en-US');
+
+    document.getElementById('r-yield').textContent = grossYield;
+    document.getElementById('r-net').textContent = netAnnual;
+    document.getElementById('r-payback').textContent = payback;
+    document.getElementById('r-value').textContent = value5;
+  }
+
+  /* =============================================
+     MORTGAGE CALCULATOR
+  ============================================= */
+  function calcMortgage() {
+    const price = parseFloat(document.getElementById('m-price').value) || 250000;
+    const down = parseFloat(document.getElementById('m-down').value) / 100 || 0.2;
+    const rate = parseFloat(document.getElementById('m-rate').value) / 100 / 12 || 0.22/12;
+    const years = parseInt(document.getElementById('m-term').value) || 15;
+    const n = years * 12;
+    const loan = price * (1 - down);
+    const monthly = rate === 0 ? loan / n : loan * rate * Math.pow(1 + rate, n) / (Math.pow(1 + rate, n) - 1);
+    const totalPay = monthly * n;
+    const totalInt = totalPay - loan;
+
+    const fmt = (v) => '$' + Math.round(v).toLocaleString('en-US');
+    document.getElementById('m-monthly').textContent = fmt(monthly);
+    document.getElementById('m-loan').textContent = fmt(loan);
+    document.getElementById('m-interest').textContent = fmt(totalInt);
+    document.getElementById('m-total').textContent = fmt(totalPay);
+  }
+
+  /* =============================================
+     TOOLS TABS
+  ============================================= */
+  document.querySelectorAll('.tool-tab').forEach(tab => {
+    tab.addEventListener('click', function() {
+      document.querySelectorAll('.tool-tab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.tool-pane').forEach(p => p.classList.remove('active'));
+      this.classList.add('active');
+      document.getElementById('tab-' + this.dataset.tab).classList.add('active');
+    });
+  });
+
+  /* =============================================
+     PROPERTY QUIZ
+  ============================================= */
+  const quizAnswers = {};
+  let quizQ = 0;
+  const totalQ = 5;
+
+  document.querySelectorAll('.quiz-opt').forEach(opt => {
+    opt.addEventListener('click', function() {
+      const q = parseInt(this.closest('.quiz-question').dataset.q);
+      // Clear siblings
+      this.closest('.quiz-options').querySelectorAll('.quiz-opt').forEach(o => o.classList.remove('selected'));
+      this.classList.add('selected');
+      quizAnswers[q] = this.dataset.val;
+
+      setTimeout(() => {
+        if (q < totalQ - 1) {
+          document.querySelector(`.quiz-question[data-q="${q}"]`).classList.remove('active');
+          document.querySelector(`.quiz-question[data-q="${q+1}"]`).classList.add('active');
+          quizQ = q + 1;
+          document.getElementById('quiz-fill').style.width = (((quizQ + 1) / totalQ) * 100) + '%';
+        } else {
+          document.getElementById('quiz-questions').style.display = 'none';
+          showQuizResult();
+        }
+      }, 380);
+    });
+  });
+
+  function showQuizResult() {
+    const a = quizAnswers;
+    let title = '', text = '', url = 'https://ladyr-realty.com/property-search/';
+    if (a[0] === 'invest' || a[4] === 'yield') {
+      title = 'Investment Property Portfolio';
+      text = 'Based on your priorities, we recommend focusing on rental apartments in East Legon or Airport Residential — areas with strong occupancy rates and 8–12% annual yields. Our investment advisory team will identify the highest-performing opportunities for your budget.';
+    } else if (a[0] === 'short') {
+      title = 'Serviced Short-Stay Accommodation';
+      text = 'We have a curated selection of furnished apartments ideal for short stays, corporate accommodation, and holiday lets in Cantonments and Airport Residential — all fully managed.';
+    } else if (a[0] === 'rent') {
+      title = 'Long-Term Rental Home';
+      text = 'We have excellent long-term rental options matching your location and budget preferences. Our team will find you a quality home and handle all documentation hassle-free.';
+    } else if (a[4] === 'luxury' || a[1] === 'high' || a[1] === 'ultra') {
+      title = 'Luxury Residential Property';
+      text = 'Your preferences point to our premium luxury listings in Trasacco Valley, Airport Residential, and East Legon — mansions and high-end apartments with world-class finishes. Contact us for an exclusive tour.';
+    } else {
+      title = 'Your Ideal Family Home';
+      text = 'Based on your answers, we recommend exploring our 3–4 bedroom family homes in established neighbourhoods like East Legon and Lakeside Estates — great value, security, and community.';
+    }
+    document.getElementById('quiz-res-title').textContent = title;
+    document.getElementById('quiz-res-text').textContent = text;
+    document.getElementById('quiz-res-link').href = url;
+    document.getElementById('quiz-result').classList.add('show');
+    // Also open WhatsApp with result
+    setTimeout(() => {
+      const waMsg = `Hello Lady R Realty, I completed your Property Match Quiz. My recommended match is: "${title}". Please help me find properties that fit this profile.`;
+      document.getElementById('quiz-res-link').href = `https://wa.me/233204123498?text=${encodeURIComponent(waMsg)}`;
+    }, 100);
+  }
+
+  /* =============================================
+     FAQ
+  ============================================= */
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', function() {
+      const item = this.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  /* =============================================
+     CONTACT FORM → WHATSAPP
+  ============================================= */
+  function handleForm(e) {
+    e.preventDefault();
+    const fname = document.getElementById('f-fname').value;
+    const lname = document.getElementById('f-lname').value;
+    const email = document.getElementById('f-email').value;
+    const phone = document.getElementById('f-phone').value;
+    const interest = document.getElementById('f-interest').options[document.getElementById('f-interest').selectedIndex].text;
+    const budget = document.getElementById('f-budget').value;
+    const message = document.getElementById('f-message').value;
+
+    const msg = `Hello Lady R Realty,\n\nMy name is ${fname} ${lname}.\nEmail: ${email}\nPhone: ${phone}\nI am interested in: ${interest}\nBudget: ${budget}\n\n${message ? 'Message: ' + message : ''}`;
+    document.getElementById('form-success').style.display = 'block';
+    setTimeout(() => {
+      window.open(`https://wa.me/233204123498?text=${encodeURIComponent(msg)}`, '_blank');
+    }, 1200);
+  }
+
+  /* =============================================
+     OPENING HOURS BADGE
+  ============================================= */
+  function updateHoursBadge() {
+    const now = new Date();
+    const day = now.getDay(); // 0=Sun,1=Mon,...6=Sat
+    const hour = now.getHours();
+    const min = now.getMinutes();
+    const t = hour + min / 60;
+    let isOpen = false;
+    if (day >= 1 && day <= 5 && t >= 8 && t < 18) isOpen = true;
+    if (day === 6 && t >= 9 && t < 15) isOpen = true;
+    const badge = document.getElementById('hours-badge');
+    if (badge) {
+      badge.innerHTML = isOpen
+        ? '<div class="open-badge"><div class="dot"></div>Open Now</div>'
+        : '<div class="closed-badge"><div class="dot"></div>Currently Closed</div>';
+    }
+  }
+  updateHoursBadge();
+
+  /* =============================================
+     POPUP
+  ============================================= */
+  let popupShown = false;
+  setTimeout(() => {
+    if (!localStorage.getItem('lrr_popup_dismissed')) {
+      document.getElementById('popup-overlay').classList.add('show');
+      popupShown = true;
+    }
+  }, 8000);
+
+  document.getElementById('popup-close').addEventListener('click', () => {
+    document.getElementById('popup-overlay').classList.remove('show');
+    localStorage.setItem('lrr_popup_dismissed', '1');
+  });
+  document.getElementById('popup-overlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+      this.classList.remove('show');
+      localStorage.setItem('lrr_popup_dismissed', '1');
+    }
+  });
+
+  function popupSubmit() {
+    const name = document.getElementById('popup-name').value.trim();
+    const phone = document.getElementById('popup-phone').value.trim();
+    if (!name || !phone) { alert('Please fill in your name and phone number.'); return; }
+    document.getElementById('popup-overlay').classList.remove('show');
+    localStorage.setItem('lrr_popup_dismissed', '1');
+    const msg = `Hello Lady R Realty! My name is ${name}. I would like to claim my FREE property valuation. My contact number is ${phone}. Please get in touch. Thank you!`;
+    window.open(`https://wa.me/233204123498?text=${encodeURIComponent(msg)}`, '_blank');
+  }
+
+  /* =============================================
+     COOKIE BANNER
+  ============================================= */
+  setTimeout(() => {
+    if (!localStorage.getItem('lrr_cookie')) {
+      document.getElementById('cookie-bar').classList.add('show');
+    }
+  }, 2000);
+  function acceptCookie() {
+    document.getElementById('cookie-bar').classList.remove('show');
+    localStorage.setItem('lrr_cookie', 'accepted');
+  }
+  function declineCookie() {
+    document.getElementById('cookie-bar').classList.remove('show');
+    localStorage.setItem('lrr_cookie', 'declined');
+  }
+
+  /* =============================================
+     FOOTER YEAR
+  ============================================= */
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  /* =============================================
+     ACTIVE NAV LINK ON SCROLL
+  ============================================= */
+  const sections = document.querySelectorAll('section[id], div[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let cur = '';
+    sections.forEach(s => {
+      if (window.scrollY >= s.offsetTop - 120) cur = s.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + cur);
+    });
+  }, { passive: true });
+
+  /* =============================================
+     INITIAL CALC CALLS
+  ============================================= */
+  calcROI();
+  calcMortgage();
+</script>
+
+</body>
+</html></parameter>        /* --- PRELOADER --- */
         #loader {
             position: fixed;
             inset: 0;
