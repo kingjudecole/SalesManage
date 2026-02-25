@@ -76,6 +76,19 @@ ul{list-style:none}
 .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
 
 /* =========================================
+   SKIP INTRO
+   ========================================= */
+function skipIntro() {
+  var pre = document.getElementById('preloader');
+  if (!pre) return;
+  pre.classList.add('pre-exit');
+  setTimeout(function() {
+    pre.style.display = 'none';
+    document.body.style.overflow = '';
+  }, 600);
+}
+
+/* =========================================
    PRELOADER — OPPENHEIM-STYLE LUXURY INTRO
    Black screen. Pure opacity. Nothing moves.
    Everything breathes in, holds, breathes out.
@@ -185,6 +198,32 @@ ul{list-style:none}
   margin: 1rem 0;
 }
 .pre-rule.expand { width: 260px; }
+
+/* Skip button */
+.pre-skip {
+  position: absolute;
+  bottom: 2.2rem;
+  right: 2rem;
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.45);
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-style: italic;
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  padding: 0.45rem 1.1rem;
+  cursor: pointer;
+  border-radius: 2px;
+  transition: color 0.3s, border-color 0.3s;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
+}
+.pre-skip:hover,
+.pre-skip:focus {
+  color: rgba(212,175,55,0.8);
+  border-color: rgba(212,175,55,0.4);
+  outline: none;
+}
 
 /* Progress bar */
 .pre-progress {
@@ -1318,6 +1357,9 @@ footer { background: #000; border-top: 1px solid rgba(212,175,55,0.12); padding:
 
   <!-- Progress bar -->
   <div class="pre-progress" id="preProgress"></div>
+
+  <!-- Skip button -->
+  <button class="pre-skip" id="preSkip" onclick="skipIntro()">Skip intro</button>
 </div>
 
 <!-- =====================================================
@@ -1378,7 +1420,7 @@ footer { background: #000; border-top: 1px solid rgba(212,175,55,0.12); padding:
            autoplay muted loop playsinline
            preload="auto"
            poster="">
-      <source src="https://raw.githubusercontent.com/YOUR_USERNAME/YOUR_REPO/main/hero-video.mp4" type="video/mp4">
+      <source src="https://raw.githubusercontent.com/kingjudecole/SalesManage/main/hero-video.mp4" type="video/mp4">
     </video>
 
     <!-- Overlays stack on top of video -->
